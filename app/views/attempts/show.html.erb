@@ -1,0 +1,38 @@
+<!--<p>-->
+  <!--<strong>Participant:</strong>-->
+  <!--<%#= @attempt.participant %>-->
+<!--</p>-->
+
+<p>
+  <strong>Survey:</strong>
+  <%= @attempt.survey %>
+</p>
+
+<ol class="questions">
+  <% @attempt.answered_questions.each do |question| %>
+      <li>
+        <h3><%= question.text %></h3>
+        <p>
+          <strong>multiple choice:</strong> <%= question.multiple_choice %>
+          <strong>weight: 5 </strong>
+          <strong>correct?:</strong> <%= @attempt.correct_answered_options?(question) %>
+        </p>
+        <ul>
+          <% question.options.each do |option| %>
+              <% my_options = @attempt.answers.includes(:option).where(options: {question_id: question.id}).pluck(:option_id).compact %>
+              <li>
+                <%= check_box_tag 'tos', 'yes', my_options.include?(option.id), class: 'options' %>
+                (<%= option.id %>) - <%= option.text %> <strong>correct: </strong> <%= option.correct %>
+              </li>
+          <% end %>
+        </ul>
+      </li>
+      <hr/>
+  <% end %>
+</ol>
+
+<div class="actions pull-right">
+  <%= link_to t('all'), survey_attempts_path(@survey), class: 'btn btn-default' %>
+  <%= link_to t('edit'), edit_survey_attempt_path(@survey, @attempt), class: 'btn btn-primary' %>
+</div>
+

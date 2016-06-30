@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  participant_id: 
+  participant_type: Participant
+  survey_id: 
+  winner: false
+  score: 1
+
+two:
+  participant_id: 
+  participant_type: Participant
+  survey_id: 
+  winner: false
+  score: 1

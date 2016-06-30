@@ -1,0 +1,11 @@
+<% if object.errors.any? %>
+    <div class="alert alert-danger fade in">
+      <h4><%= t('errors.template.body')%></h4>
+      <button class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <ul>
+        <% object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

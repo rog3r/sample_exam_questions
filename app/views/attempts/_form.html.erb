@@ -1,0 +1,34 @@
+<%= form_for([@survey, @attempt]) do |f| %>
+    <%= render 'shared/error_messages', object: @attempt if @attempt.errors.any? %>
+    <%= hidden_field_tag "attempt[participant_id]", 1 %>
+    <%= hidden_field_tag "attempt[participant_type]", 'User' %>
+
+    <h2 class="survey"><%= @survey.name %></h2>
+
+    <ol class="questions">
+      <% answer_idx = 0 %>
+      <% @survey.questions.each do |question| %>
+          <li>
+            <h3 class="question"><%= question.text %></h3>
+            <ul>
+              <% question.options.each do |option| %>
+                  <li>
+                    <label>
+                      <% @attempt.answers.build %>
+                      <% answer_idx += 1 %>
+                      <%#= hidden_field_tag "attempt[answers_attributes][#{answer_idx}][question_id]", question.id %>
+                      <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %>
+                      <%= option.id %> - <%= option.text %>
+                    </label>
+                  </li>
+              <% end %>
+            </ul>
+            <hr/>
+          </li>
+      <% end %>
+    </ol>
+    <div class="actions pull-right">
+      <%= link_to t('back'), survey_attempts_path(@survey), class: 'btn btn-default' %>
+      <%= f.submit class: 'btn btn-primary', id: 'submit_attempt', data: {disable_with: 'processing'} %>
+    </div>
+<% end -%>

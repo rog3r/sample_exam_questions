@@ -1,0 +1,13 @@
+<div class="row fields">
+  <div class="form-group col-xs-4">
+    <%= f.text_field :text, placeholder: 'answer', class: 'form-control' %>
+  </div>
+  <div class="checkbox col-xs-3 col-sm-2">
+    <%= f.label :correct do %>
+        <%= f.check_box :correct %> Correct answer?
+    <% end %>
+  </div>
+  <div class="col-xs-4">
+    <%= link_to '', '#', class: 'glyphicon glyphicon-remove btn  btn-danger remove_fields' %>
+  </div>
+</div>

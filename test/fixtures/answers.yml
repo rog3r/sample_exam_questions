@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  attempt_id: 
+  question_id: 
+  option_id: 
+  correct: false
+
+two:
+  attempt_id: 
+  question_id: 
+  option_id: 
+  correct: false

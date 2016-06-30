@@ -1,0 +1,106 @@
+//http://www.bootply.com/78010
+//http://codecanyon.net/item/b3-bootstrap-3-navbar/full_screen_preview/6464826
+//http://www.scratchinginfo.net/best-responsive-twitter-bootstrap-skins/
+//https://responsivesharepoint.codeplex.com/discussions/451013
+//http://pikock.github.io/bootstrap-magic/app/#!/editor
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px
+}
+
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px
+}
+
+.bs-callout p:last-child {
+  margin-bottom: 0
+}
+
+.bs-callout code {
+  border-radius: 3px
+}
+
+.bs-callout + .bs-callout {
+  margin-top: -5px
+}
+.bs-callout-default {
+  border-left-color: #777;
+}
+.bs-callout-default h4 {
+  color: #777;
+}
+.bs-callout-primary {
+  border-left-color: #428bca;
+}
+.bs-callout-primary h4 {
+  color: #428bca;
+}
+.bs-callout-success {
+  border-left-color: #5cb85c;
+}
+.bs-callout-success h4 {
+  color: #5cb85c;
+}
+
+.bs-callout-danger {
+  border-left-color: #d9534f
+}
+
+.bs-callout-danger h4 {
+  color: #d9534f
+}
+
+.bs-callout-warning {
+  border-left-color: #f0ad4e
+}
+
+.bs-callout-warning h4 {
+  color: #f0ad4e
+}
+
+.bs-callout-info {
+  border-left-color: #5bc0de
+}
+
+.bs-callout-info h1 {
+  color: #666 !important
+}
+
+.bs-callout-info h2 {
+  color: #60a917 !important
+}
+
+.bs-callout-info h3 {
+  color: #4390df !important
+}
+
+.bs-callout-info h4 {
+  color: #5bc0de
+}
+
+.bs-callout-info h5 {
+  color: #dc4fad !important
+}
+
+.bs-callout-info h6 {
+  color: #00aba9 !important;
+  color: #fa6800 !important;
+  color: #4390df !important;
+  color: #128023 !important;
+  color: #dc4fad !important;
+  color: #aa00ff !important;
+  color: #9a1616 !important;
+  color: #eeeeee !important;
+  color: #f0a30a !important;
+  color: #a0e857 !important;
+  color: #fa6800 !important;
+  color: #e6f5fc !important;
+  color: #2e92cf !important;
+  color: #60a917 !important;
+  color: #1ba1e2 !important;
+}
+

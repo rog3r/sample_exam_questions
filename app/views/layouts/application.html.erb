@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey4Certification</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
+  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'shared/navbar' %>
+<%= render 'shared/flash_messages' %>
+<div id="content" class="content col-md-12">
+  <%= yield %>
+</div>
+<%#= render 'shared/footer' %>
+<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' %>
+</body>
+</html>
+
+

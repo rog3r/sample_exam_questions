@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  attempts_number: 1
+  finished: false
+  active: false
+
+two:
+  name: MyString
+  description: MyText
+  attempts_number: 1
+  finished: false
+  active: false

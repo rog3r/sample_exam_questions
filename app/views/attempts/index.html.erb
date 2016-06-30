@@ -1,0 +1,28 @@
+<h2>Attempts</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Participant</th>
+      <th>Survey</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attempts.each do |attempt| %>
+      <tr>
+        <td><%#= attempt.participant %></td>
+        <td><%= attempt.survey %></td>
+        <td><%= link_to 'Show', [@survey, attempt] %></td>
+        <td><%= link_to 'Edit', edit_survey_attempt_path(@survey, attempt) %></td>
+        <td><%= link_to 'Destroy', attempt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="actions pull-right">
+  <%= link_to t('back'),  survey_attempts_path, class: 'btn btn-default' %>
+  <%= link_to 'New Attempt', new_survey_attempt_path, class: 'btn btn-primary' %>
+</div>
