@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :surveys, only: [:index] do
-    resources :attempts
+    resources :attempts, except: [:edit, :update, :destroy]
   end
 
   namespace :admin do
