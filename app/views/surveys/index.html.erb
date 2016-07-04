@@ -5,9 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Attempts number</th>
-      <th>Active</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -16,12 +14,7 @@
       <tr>
         <td><%= survey.name %></td>
         <td><%= survey.description %></td>
-        <td><%= survey.attempts_number %></td>
-        <td><%= survey.active %></td>
-        <td><%= link_to 'Start', new_survey_attempt_path(survey) %></td>
-        <td><%= link_to 'Show', survey %></td>
-        <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
-        <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Start', new_survey_attempt_path(survey), class: 'btn btn-primary'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,5 +26,4 @@
 
 <div class="actions pull-right">
   <%= link_to t('back'), surveys_path, class: 'btn btn-default' %>
-  <%= link_to 'New Survey', new_survey_path, class: 'btn btn-primary' %>
 </div>

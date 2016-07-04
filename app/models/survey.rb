@@ -2,7 +2,7 @@ class Survey < ActiveRecord::Base
   # associations
   has_many :attempts,  dependent: :destroy
   has_many :questions, dependent: :destroy
-  accepts_nested_attributes_for :questions, reject_if: lambda { |question| question[:text].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :questions, allow_destroy: true, reject_if: lambda { |question| question[:text].blank? }
 
   # scopes
   scope :active,   -> { where(active: true) }

@@ -1,0 +1,39 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @survey.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @survey.description %>
+</p>
+
+<p>
+  <strong>Attempts number:</strong>
+  <%= @survey.attempts_number %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @survey.active %>
+</p>
+
+
+<% @survey.questions.each do |question| %>
+    <div>
+      <h3><%= question.text %></h3>
+      <p><strong>multiple choice:</strong> <%= question.multiple_choice %>  <strong>weight: 5</strong></p>
+      <% question.options.each do |option| %>
+          <div>
+            <p>(<%= option.id %>) - <%= option.text %>
+            <strong>correct: </strong> <%= option.correct %></p>
+          </div>
+      <% end %>
+    </div><hr />
+<% end %>
+
+<div class="actions pull-right">
+  <%= link_to t('all'), admin_surveys_path, class: 'btn btn-default' %>
+  <%= link_to t('edit'), edit_admin_survey_path(@survey), class: 'btn btn-primary' %>
+</div>

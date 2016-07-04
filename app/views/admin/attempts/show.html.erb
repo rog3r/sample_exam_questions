@@ -29,6 +29,7 @@
 </ol>
 
 <div class="actions pull-right">
-  <%= link_to t('all'), survey_attempts_path(@survey), class: 'btn btn-default' %>
+  <%= link_to t('all'), admin_survey_attempts_path(@survey), class: 'btn btn-default' %>
+  <%= link_to t('edit'), edit_admin_survey_attempt_path(@survey, @attempt), class: 'btn btn-primary' %>
 </div>
 

@@ -14,10 +14,10 @@
  *= require_self
  */
 
-
 body {
     padding-bottom: 50px;
 }
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -26,4 +26,20 @@ body {
     line-height: 40px;
     font-size: 13px;
     background-color: #f8f8f8;
+}
+
+ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+
+ul.options {
+    list-style-type: none;
+}
+
+.correct-answer {
+    color: #128023;
+}
+
+.wrong-answer {
+    color: #d9534f
 }

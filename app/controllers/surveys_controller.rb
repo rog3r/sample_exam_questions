@@ -7,61 +7,6 @@ class SurveysController < ApplicationController
     @surveys = Survey.all
   end
 
-  def show
-  end
-
-  def new
-    @survey = Survey.new
-    @survey.questions.build
-  end
-
-  def edit
-  end
-
-  def create
-    @survey = Survey.create(survey_params)
-    respond_with(@survey)
-  end
-
-  def update
-    @survey.update(survey_params)
-    respond_with(@survey)
-  end
-
-  def destroy
-    @survey.destroy
-    respond_with @survey, location: surveys_path
-  end
-
-  private
-  def set_survey
-    @survey = Survey.find(params[:id])
-  end
-
-
-  def survey_params
-    params.require(:survey)
-        .permit(
-            :name, :description, :attempts_number, :active,
-            # has_many :questions (Nested Attributes)
-            questions_attributes: [
-                :survey_id,
-                :id,
-                :text,
-                :_destroy,
-                :multiple_choice,
-                # :has_many :options (Nested Attributes)
-                options_attributes: [
-                    :question_id,
-                    :id,
-                    :text,
-                    :_destroy,
-                    :weight,
-                    :correct
-                ]
-            ]
-        )
-  end
 end
 
 

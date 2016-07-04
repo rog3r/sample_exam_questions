@@ -3,20 +3,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Participant</th>
+      <!--<th>Participant</th>-->
       <th>Survey</th>
-      <th colspan="3"></th>
+      <th ></th>
     </tr>
   </thead>
 
   <tbody>
     <% @attempts.each do |attempt| %>
       <tr>
-        <td><%#= attempt.participant %></td>
+        <!--<td><%#= attempt.participant %></td>-->
         <td><%= attempt.survey %></td>
         <td><%= link_to 'Show', [@survey, attempt] %></td>
-        <td><%= link_to 'Edit', edit_survey_attempt_path(@survey, attempt) %></td>
-        <td><%= link_to 'Destroy', attempt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
