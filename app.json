@@ -1,0 +1,25 @@
+{
+    "name": "Sample Exam Questions",
+    "description": "Certification Practice Questions APP",
+    "website": "https://br.linkedin.com/in/rogeriodti",
+    "repository": "https://github.com/rog3r/sample_exam_questions",
+    "keywords": [
+        "Scrum master Certification",
+        "Prometric Exam Questions",
+        "Prometric Exam Sample",
+        "Certification Exam Questions",
+        "Sample Exam Questions",
+        "Multiple Choice Question",
+        "Survey Multiple Answers",
+        "Survey Multiple Choices",
+        "Free Certification Exam Preparation",
+        "Survey Multiple Choice Answers",
+        "Survey Multiple Choice Questions"
+    ],
+    "scripts": {
+        "postdeploy": "bundle exec rake db:migrate"
+    },
+    "addons": [
+        "heroku-postgresql"
+    ]
+}
