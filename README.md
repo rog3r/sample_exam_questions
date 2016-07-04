@@ -14,7 +14,7 @@ APP demonstration - Certification Objective Questions Answers.
  <h3>Team Members</h3>
 
  <ul>
-   <li>Rogerio Oliveira: <a href="https://sample_exam_questions.herokuapp.com/"><img class="banner" src="https://raw.githubusercontent.com/rog3r/huginn/sample_exam_questions/doc/images/linkedin-logo.png"></img></a></li>
-   <li>João Barros: <a href="https://sample_exam_questions.herokuapp.com/"><img class="banner" src="https://raw.githubusercontent.com/rog3r/huginn/sample_exam_questions/doc/images/linkedin-logo.png"></img></a></li>
-   <li>João Neto: <a href="https://sample_exam_questions.herokuapp.com/"><img class="banner" src="https://raw.githubusercontent.com/rog3r/huginn/sample_exam_questions/doc/images/linkedin-logo.png"></img></a></li>
+   <li>Rogerio Oliveira: <a href="https://sample_exam_questions.herokuapp.com/"><img class="banner" src="https://raw.githubusercontent.com/rog3r/sample_exam_questions/master/doc/images/linkedin-logo.png"  width="32" height="32"></img></a></li>
+   <li>João Barros: <a href="https://sample_exam_questions.herokuapp.com/"><img class="banner" src="https://raw.githubusercontent.com/rog3r/sample_exam_questions/master/doc/images/linkedin-logo.png"  width="32" height="32"></img></a></li>
+   <li>João Neto: <a href="https://sample_exam_questions.herokuapp.com/"><img class="banner" src="https://raw.githubusercontent.com/rog3r/sample_exam_questions/master/doc/images/linkedin-logo.png"  width="32" height="32"></img></a></li>
  </ul>
