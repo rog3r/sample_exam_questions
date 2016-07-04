@@ -1,6 +1,6 @@
 class AttemptsController < ApplicationController
   before_action :find_survey
-  before_action :set_attempt, only: [:show, :edit, :update, :destroy]
+  before_action :set_attempt, only: [:show]
 
   respond_to :html
   responders :flash
@@ -16,22 +16,9 @@ class AttemptsController < ApplicationController
     @attempt = @survey.attempts.new
   end
 
-  def edit
-  end
-
   def create
     @attempt = @survey.attempts.create(attempt_params)
     respond_with(@survey, @attempt)
-  end
-
-  def update
-    @attempt.update(attempt_params)
-    respond_with(@survey, @attempt)
-  end
-
-  def destroy
-    @attempt.destroy
-    respond_with @attempt, location: survey_attempts_path(@survey)
   end
 
   private

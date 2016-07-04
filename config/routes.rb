@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :surveys do
+  resources :surveys, only: [:index] do
     resources :attempts
   end
 
