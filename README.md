@@ -1,20 +1,64 @@
+ # Sample Exam Questions
 
-APP demonstration - Certification Objective Questions Answers.
+ Sample Exam Questions APP (List of Free Mock Exam Questions) multiple choice support
 
-<ul>
-  <li>Live Demo: <a href="https://appcertification.herokuapp.com/">https://appcertification.herokuapp.com/</a></li>
-</ul>
+ # Features
+  - Multiple choice questions support
+  - Support images in questions and alternatives
+  - Mobile-first
+
+ # Live Demo
+ https://appcertification.herokuapp.com/
+
+ # Screenshots
+ [images]
 
 
-<a href="https://heroku.com/deploy?template=https://github.com/rog3r/sample_exam_questions">
+ # Installation
+ AppCertification was designed to run on on modern cloud providers like Digital Ocean or Heroku, although it should work just about anywhere. For a quick trial you can get set up on Heroku by clicking this button:
+ <a href="https://heroku.com/deploy?template=https://github.com/rog3r/sample_exam_questions">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
 
- <h3>Team Members</h3>
 
- <ul>
-   <li>Rogerio Oliveira: <a href="https://br.linkedin.com/in/rogeriodti" ><img class="banner" src="https://raw.githubusercontent.com/rog3r/sample_exam_questions/master/doc/images/linkedin-logo.png"  width="32" height="32"></img></a></li>
-   <li>João Barros: <a href="https://appcertification.herokuapp.com/surveys/1/attempts/1"><img class="banner" src="https://raw.githubusercontent.com/rog3r/sample_exam_questions/master/doc/images/linkedin-logo.png"  width="32" height="32"></img></a></li>
-   <li>João Neto: <a href="https://appcertification.herokuapp.com/surveys/1/attempts/1"><img class="banner" src="https://raw.githubusercontent.com/rog3r/sample_exam_questions/master/doc/images/linkedin-logo.png"  width="32" height="32"></img></a></li>
- </ul>
+ ##### Manual installation
+
+
+ Requirements are:
+
+ Ruby 2.2
+ Rails 4.2
+ A server like Unicorn, Puma, Passenger or Thin
+
+
+ Bundle the Gemfile
+
+ ```sh
+ bundle install
+ ```
+
+
+  Setup database
+  ```sh
+  rake db:setup
+  ```
+
+
+ ### Version
+ 1.0a
+
+ ### Todos
+
+  - Write Tests
+  - Add explanation to question
+  - Login with facebook
+  - Time limit for attempt
+
+
+
+ License
+ ----
+
+ MIT
+
