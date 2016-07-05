@@ -15,6 +15,11 @@
 </p>
 
 <p>
+  <strong>Questions:</strong>
+  <%= @survey.questions.try(:lenght) %>
+</p>
+
+<p>
   <strong>Active:</strong>
   <%= @survey.active %>
 </p>
