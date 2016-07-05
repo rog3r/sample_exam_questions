@@ -91,6 +91,9 @@ GEM
     nokogiri (1.6.8-x64-mingw32)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    passenger (5.0.26)
+      rack
+      rake (>= 0.8.1)
     pg (0.18.4-x64-mingw32)
     pkg-config (1.1.7)
     polyamorous (1.3.0)
@@ -185,6 +188,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  passenger (>= 5.0.22)
   pg
   rails (= 4.2.6)
   ransack
