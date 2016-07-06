@@ -1,0 +1,18 @@
+<h2><%=t('.title', default: 'Resend confirmation instructions')%></h2>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post}) do |f| %>
+    <%= render 'shared/error_messages', object: resource %>
+
+    <div class="field form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t('.submit', default: 'Resend confirmation instructions'), class: 'btn  btn-primary' %>
+      <%= render 'devise/shared/links' %>
+    </div>
+
+<% end %>
+
+

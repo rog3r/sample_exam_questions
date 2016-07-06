@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'rails', '4.2.6'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
@@ -12,6 +11,9 @@ gem 'thin'
 gem 'seed_dump'
 gem 'ransack'
 gem 'responders'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sdoc', '~> 0.4.0', group: :doc
 
