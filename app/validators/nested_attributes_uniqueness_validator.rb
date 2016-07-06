@@ -13,15 +13,4 @@ class NestedAttributesUniquenessValidator < ActiveModel::EachValidator
 
   end
 
-  # def validate_each(record, attribute, value)
-  #   e = f.nivels.map(&:nome)
-  #   e.select{ |nome| e.count(nome) > 1 }.uniq
-  #   nested_fields = value.map(&options[:field]).collect(&:strip)
-  #   nested_duplicated_fields = nested_fields.select{ |nome| nested_fields.count(nome) > 1 }.uniq
-
-  #   unless nested_duplicated_fields.size > 0
-  #     record.errors[attribute] << (options[:message] || 'must be unique')
-  #   end
-  # end
-
 end
