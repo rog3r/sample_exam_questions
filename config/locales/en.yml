@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  confirm_logout: "Confirm logout?"
+  ok: "Ok"
+  cancel: "Cancel"
+  welcome: "Welcome"
