@@ -49,6 +49,7 @@ class Admin::SurveysController  < ApplicationController
                 :survey_id,
                 :id,
                 :text,
+                :explanation,
                 :_destroy,
                 :multiple_choice,
                 :peso,

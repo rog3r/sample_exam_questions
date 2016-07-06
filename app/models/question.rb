@@ -36,6 +36,7 @@ end
 #  multiple_choice :boolean
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  explanation     :text
 #
 # Indexes
 #

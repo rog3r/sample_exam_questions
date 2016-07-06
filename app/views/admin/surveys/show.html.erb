@@ -29,12 +29,16 @@
     <div>
       <h3><%= question.text %></h3>
       <p><strong>multiple choice:</strong> <%= question.multiple_choice %>  <strong>weight: 5</strong></p>
-      <% question.options.each do |option| %>
-          <div>
-            <p>(<%= option.id %>) - <%= option.text %>
-            <strong>correct: </strong> <%= option.correct %></p>
-          </div>
-      <% end %>
+
+      <ul class="options">
+        <% question.options.each do |option| %>
+            <li>
+              <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= option.text %></label>
+            </li>
+        <% end %>
+      </ul>
+
+      <strong>Explanation:</strong> <br /><%= question.explanation %>
     </div><hr />
 <% end %>
 
