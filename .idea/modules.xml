@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/survey_certification.iml" filepath="$PROJECT_DIR$/.idea/survey_certification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sample_exam_questions.iml" filepath="$PROJECT_DIR$/.idea/sample_exam_questions.iml" />
     </modules>
   </component>
 </project>

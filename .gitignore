@@ -15,4 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
-/.idea/*
+
+# Ignore Rubymine config .idea/**
+/.idea
+>>>>>>> c44022a9ac858ca17522f73cebf2834991325d9f

@@ -11,6 +11,7 @@ class Survey < ActiveRecord::Base
   # validations
   #validates :attempts_number, numericality: { only_integer: true, greater_than: -1 }
   validates :description, :name, presence: true, allow_blank: false
+  validates :questions, nested_attributes_uniqueness: {field: :text}
 
   def to_s
     name
@@ -40,9 +41,8 @@ end
 #  name            :string
 #  description     :text
 #  attempts_number :integer
+#  finished        :boolean
 #  active          :boolean
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-
-

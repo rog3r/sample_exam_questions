@@ -9,6 +9,8 @@ class Question < ActiveRecord::Base
   # validations
   validates :text, presence: true, allow_blank: false
 
+  # TODO add Explanation Note to model
+  # TODO add Topics to model
 
 
   def correct_options
@@ -34,6 +36,7 @@ end
 #  multiple_choice :boolean
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  explanation     :text
 #
 # Indexes
 #
