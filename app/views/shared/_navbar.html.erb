@@ -16,9 +16,7 @@
       <% if user_signed_in? %>
           <span class="glyphicon glyphicon-user navbar-link" aria-hidden="true"></span>
           <span class="navbar-link"><%= t('welcome') %></span> <%= link_to "#{current_user.email}", style: 'font-weight: bold;' %>
-          <%= link_to('', destroy_user_session_path, method: :delete, data: {confirm: t('confirm_logout')}, class: 'glyphicon glyphicon-log-out btn btn-sm btn-default') %>
-      <% else %>
-          <i><%= link_to('', new_user_session_path, class: 'glyphicon glyphicon-log-in btn btn-info') %></i>
+          <%= link_to('', destroy_user_session_path, method: :delete, data: {confirm: t('confirm_logout')},title: 'Logout', class: 'glyphicon glyphicon-log-out btn btn-sm btn-default') %>
       <% end %>
     </div>
 
@@ -42,29 +40,29 @@
 
 
 <!--<header>-->
-  <!--<div class="navbar navbar-default navbar-static-top" role="navigation">-->
-    <!--<div class="container">-->
-      <!--<div class="navbar-header">-->
-        <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
-          <!--<span class="sr-only">Toggle navigation</span>-->
-          <!--<span class="icon-bar"></span>-->
-          <!--<span class="icon-bar"></span>-->
-          <!--<span class="icon-bar"></span>-->
-        <!--</button>-->
-        <!--<%#= link_to surveys_path, class: 'navbar-brand' do %>-->
-          <!--<%#= render 'shared/logo' %>-->
-        <!--<%# end -%>-->
-      <!--</div>-->
-      <!--<div class="navbar-collapse collapse">-->
-        <!--<ul class="nav navbar-nav">-->
-          <!--<li class="<%#= is_active?(surveys_path) %>">-->
-            <!--<%#= link_to surveys_path do %>-->
-              <!--All surveys-->
-              <!--<span class='badge'> <%#= surveys_count %> </span>-->
-            <!--<%# end -%>-->
-          <!--</li>-->
-        <!--</ul> -->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
+<!--<div class="navbar navbar-default navbar-static-top" role="navigation">-->
+<!--<div class="container">-->
+<!--<div class="navbar-header">-->
+<!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+<!--<span class="sr-only">Toggle navigation</span>-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--</button>-->
+<!--<%#= link_to surveys_path, class: 'navbar-brand' do %>-->
+<!--<%#= render 'shared/logo' %>-->
+<!--<%# end -%>-->
+<!--</div>-->
+<!--<div class="navbar-collapse collapse">-->
+<!--<ul class="nav navbar-nav">-->
+<!--<li class="<%#= is_active?(surveys_path) %>">-->
+<!--<%#= link_to surveys_path do %>-->
+<!--All surveys-->
+<!--<span class='badge'> <%#= surveys_count %> </span>-->
+<!--<%# end -%>-->
+<!--</li>-->
+<!--</ul> -->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 <!--</header>-->
