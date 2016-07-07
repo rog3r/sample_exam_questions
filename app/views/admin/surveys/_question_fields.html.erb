@@ -1,16 +1,11 @@
 <div class="bs-callout bs-callout-primary fields">
+
   <fieldset>
-    <%#= f.hidden_field :_destroy %>
     <legend>Question <%= f.options[:child_index] + 1 %></legend>
 
     <div class="form-group">
       <%= f.label :text %>
       <%= f.text_area :text, placeholder: 'question', rows: '6', class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :explanation %>
-      <%= f.text_area :explanation, placeholder: 'question', rows: '4', class: 'form-control' %>
     </div>
 
     <div class="form-group">
@@ -30,6 +25,12 @@
       </ol>
     </fieldset>
 
+    <div class="form-group">
+      <%= f.label :explanation %>
+      <%= f.text_area :explanation, placeholder: 'question', rows: '3', class: 'form-control' %>
+    </div>
+
+    <%= f.hidden_field :_destroy %>
     <%= link_to '', '#', class: 'glyphicon glyphicon-remove btn  btn-danger remove_fields' %>
   </fieldset>
 </div>

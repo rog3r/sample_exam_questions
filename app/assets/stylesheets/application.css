@@ -43,4 +43,7 @@ ul.options {
 .wrong-answer {
     color: #d9534f
 }
-
+ul.options li:nth-child(odd) {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}

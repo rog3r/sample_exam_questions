@@ -10,16 +10,14 @@
       <% @survey.questions.each do |question| %>
           <li>
             <h3 class="question"><%= question.text %></h3>
-            <ul>
+            <ul class="options">
               <% question.options.each do |option| %>
+                  <% @attempt.answers.build %>
+                  <% answer_idx += 1 %>
                   <li>
-                    <label>
-                      <% @attempt.answers.build %>
-                      <% answer_idx += 1 %>
-                      <%#= hidden_field_tag "attempt[answers_attributes][#{answer_idx}][question_id]", question.id %>
-                      <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %>
-                      <%= option.id %> - <%= option.text %>
-                    </label>
+                    <%= label_tag :text do %>
+                        <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %><%= raw option.text %>
+                    <% end %>
                   </li>
               <% end %>
             </ul>
