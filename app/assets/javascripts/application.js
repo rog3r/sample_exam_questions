@@ -18,5 +18,3 @@
 //= require turbolinks
 
 
-
-

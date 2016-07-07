@@ -52,6 +52,7 @@ class Admin::SurveysController  < ApplicationController
                 :explanation,
                 :_destroy,
                 :multiple_choice,
+                :peso,
                 # :has_many :options (Nested Attributes)
                 options_attributes: [
                     :question_id,
