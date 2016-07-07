@@ -3,7 +3,8 @@
 <head>
   <title>Survey4Certification</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
-  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', media: 'all' %>
+  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track': true %>
+  <%= stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/railscasts.min.css', media: 'all', 'data-turbolinks-track': true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -13,8 +14,64 @@
   <%= yield %>
 </div>
 <%#= render 'shared/footer' %>
-<%= javascript_include_tag 'application' , 'data-turbolinks-track': true %>
-<%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+<%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', 'data-turbolinks-track': true %>
+
+<%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js', 'data-turbolinks-track': true %>
+<%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/cs.min.js', 'data-turbolinks-track': true %>
+<%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/java.min.js', 'data-turbolinks-track': true %>
+<%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/javascript.min.js', 'data-turbolinks-track': true %>
+<%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/ruby.min.js', 'data-turbolinks-track': true %>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('pre code').each(function (i, block) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+<style>
+  /*.content-hide:after {*/
+  /*content: " +";*/
+  /*}*/
+
+  /*.content-show:after {*/
+  /*content: " -";*/
+  /*}*/
+
+  legend a {
+    color: inherit;
+  }
+
+  fieldset.fieldset-explanation {
+    border: 1px solid #999999;
+    padding: 4px;
+    margin: 5px;
+  }
+
+  legend.legend-explanation {
+    font-size: 90%;
+    background: #128023;
+    color: #FFF;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .content-explanation {
+    display: none;
+  }
+
+  legend {
+    width: auto;
+    border-bottom: 0px;
+  }
+
+</style>
+
+
 </body>
 </html>
 
