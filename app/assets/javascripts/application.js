@@ -16,4 +16,5 @@
 //= require_tree .
 
 //= require turbolinks
+//= require bootstrap-confirm-dialog
 
