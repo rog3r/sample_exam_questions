@@ -13,8 +13,56 @@
   <%= yield %>
 </div>
 <%#= render 'shared/footer' %>
-<%= javascript_include_tag 'application' , 'data-turbolinks-track': true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
 <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' %>
+
+
+
+
+<style>
+  /*.content-hide:after {*/
+  /*content: " +";*/
+  /*}*/
+
+  /*.content-show:after {*/
+  /*content: " -";*/
+  /*}*/
+
+  /*.explanation {*/
+  /*border: solid 1px red;*/
+  /*}*/
+
+  legend a {
+    color: inherit;
+  }
+
+  fieldset.fieldset-explanation {
+    border: 1px solid #999999;
+    padding: 4px;
+    margin: 5px;
+  }
+
+  legend.legend-explanation {
+    font-size: 90%;
+    background: #128023;
+    color: #FFF;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .content-explanation {
+    display: none;
+  }
+
+  legend {
+    width: auto;
+    border-bottom: 0px;
+  }
+
+</style>
+
+
 </body>
 </html>
 

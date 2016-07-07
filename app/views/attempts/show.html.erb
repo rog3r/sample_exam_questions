@@ -23,7 +23,23 @@
               </li>
           <% end %>
         </ul>
-        <strong>Explanation:</strong> <br /><%= question.explanation %>
+
+        <fieldset class="fieldset-explanation">
+          <legend class="legend-explanation">
+            <a data-toggle="collapse" data-target="#<%= dom_id(question) %>" href="#">Explanation</a>
+          </legend>
+          <div id="<%= dom_id(question) %>" class="content-explanation">
+            <%= question.explanation %>
+            ou are employed as a developer at PassGuide.com. PassGuide.com has a single Active Directory domain, named
+            PassGuide.com. You are making use of Visual Studio 2012 to create a new ASP.NET<br>
+            MVC application for PassGuide.com. You have configured the application to include pages<br> for Windows
+            Phone 7 users to browse the site. <br>
+            You have been instructed to make sure that the application is updated to allow Windows Phone 7 users to
+            accurately view the modified files. <br>
+            You are required to update a specific method. Which of the following is the method that should be updated?
+          </div>
+        </fieldset>
+
       </li>
       <hr/>
   <% end %>
@@ -32,4 +48,6 @@
 <div class="actions pull-right">
   <%= link_to t('all'), survey_attempts_path(@survey), class: 'btn btn-default' %>
 </div>
+
+
 

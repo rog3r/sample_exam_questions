@@ -24,9 +24,9 @@
   <%= @survey.active %>
 </p>
 
-
+<ol class="questions">
 <% @survey.questions.each do |question| %>
-    <div>
+    <li>
       <h3><%= question.text %></h3>
       <p><strong>multiple choice:</strong> <%= question.multiple_choice %>  <strong>weight: 5</strong></p>
 
@@ -39,8 +39,9 @@
       </ul>
 
       <strong>Explanation:</strong> <br /><%= question.explanation %>
-    </div><hr />
+    </li><hr />
 <% end %>
+</ol>
 
 <div class="actions pull-right">
   <%= link_to t('all'), admin_surveys_path, class: 'btn btn-default' %>
