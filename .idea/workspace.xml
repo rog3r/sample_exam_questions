@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0bd4c23a-39d0-4211-8e37-14ed35d32492" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/surveys.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/surveys.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/question.rb" afterPath="$PROJECT_DIR$/app/models/question.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/surveys/_question_fields.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/surveys/_question_fields.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
     </list>
     <ignored path="survey_certification.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +44,8 @@
       <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.653847">
-              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -58,16 +56,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-20.26923">
               <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="32" selection-end-column="93" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="surveys.js.coffee" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/surveys.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18518518">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -103,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_option_fields.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_option_fields.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/surveys/_option_fields.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538">
+            <state vertical-scroll-proportion="0.2962963">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
@@ -132,11 +120,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/admin/surveys/_option_fields.html.erb" />
         <option value="$PROJECT_DIR$/app/models/question.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/surveys/_question_fields.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/surveys.js.coffee" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -539,22 +527,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.653847">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/surveys/_option_fields.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/surveys/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.307692">
@@ -597,6 +569,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/surveys.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.055555556">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/surveys/_question_fields.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.26923">
@@ -605,10 +593,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/surveys.js.coffee">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/surveys/_option_fields.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18518518">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.2962963">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
