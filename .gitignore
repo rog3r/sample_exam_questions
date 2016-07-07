@@ -34,6 +34,13 @@
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+.idea/runConfigurations
+.idea/.generators
+.idea/.name
+.idea/.rakeTasks
+.idea/misc.xml
+.idea/modules.xml
+.idea/sample_exam_questions.iml
 
 # Gradle:
 .idea/gradle.xml
