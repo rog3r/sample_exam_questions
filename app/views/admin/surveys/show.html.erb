@@ -28,7 +28,7 @@
 <% @survey.questions.each do |question| %>
     <li>
       <h3><%= question.text %></h3>
-      <p><strong>multiple choice:</strong> <%= question.multiple_choice %>  <strong>weight: 5</strong></p>
+      <p><strong>multiple choice:</strong> <%= question.multiple_choice %>  <strong>weight: <%= question.weight %></strong></p>
 
       <ul class="options">
         <% question.options.each do |option| %>

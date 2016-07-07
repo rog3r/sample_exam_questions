@@ -44,3 +44,14 @@ ul.options {
     color: #d9534f
 }
 
+.score{
+    float: right;
+}
+
+.score-passing{
+    color: #4390df;
+}
+
+.score-reproving{
+    color: #d9534f;
+}

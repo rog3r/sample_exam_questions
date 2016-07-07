@@ -13,6 +13,10 @@ class Attempt < ActiveRecord::Base
   #scopes
   #scope :answered_questions, ->(attempt) { Answer.where(attempt: attempt) }
 
+  def score
+    correct_answered_questions.map(&:weight).inject(&:+)
+  end
+
 
   def answered_questions
     answers.map(&:question).uniq
@@ -28,7 +32,7 @@ class Attempt < ActiveRecord::Base
     questions.each do |question|
       corrects.push(question) if correct_answered_options?(question)
     end
-    corrects
+    corrects.uniq
   end
 
 
@@ -57,3 +61,11 @@ end
 #  index_attempts_on_participant_type_and_participant_id  (participant_type,participant_id)
 #  index_attempts_on_survey_id                            (survey_id)
 #
+
+
+
+# survey = Survey.first
+# attempt = survey.attempt.new
+# attempt.participant = User.firt
+#
+# attempt.answers.new({})
