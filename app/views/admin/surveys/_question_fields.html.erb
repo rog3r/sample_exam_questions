@@ -1,6 +1,6 @@
 <div class="bs-callout bs-callout-primary fields">
+
   <fieldset>
-    <%#= f.hidden_field :_destroy %>
     <legend>Question <%= f.options[:child_index] + 1 %></legend>
 
     <div class="form-group">
@@ -29,7 +29,7 @@
         <%= link_to_add_fields '', f, :options, class: 'glyphicon glyphicon-plus btn btn-info add_fields_link pull-right ' %>
       </ol>
     </fieldset>
-
+    <%= f.hidden_field :_destroy %>
     <%= link_to '', '#', class: 'glyphicon glyphicon-remove btn  btn-danger remove_fields' %>
   </fieldset>
 </div>

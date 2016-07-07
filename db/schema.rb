@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160705183638) do
+
   create_table "answers", force: :cascade do |t|
     t.integer  "attempt_id"
     t.integer  "option_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160705183638) do
     t.string   "name"
     t.text     "description"
     t.integer  "attempts_number"
+    t.boolean  "finished"
     t.boolean  "active"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
