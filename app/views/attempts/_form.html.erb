@@ -16,7 +16,7 @@
                   <% answer_idx += 1 %>
                   <li>
                     <%= label_tag :text do %>
-                        <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %><%= raw option.text %>
+                        <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %><%= option.text.html_safe %>
                     <% end %>
                   </li>
               <% end %>
@@ -30,3 +30,5 @@
       <%= f.submit class: 'btn btn-primary', id: 'submit_attempt', data: {disable_with: 'processing'} %>
     </div>
 <% end -%>
+
+

@@ -6,6 +6,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem "font-awesome-rails"
 gem 'jbuilder', '~> 2.0'
 
 gem 'seed_dump'
@@ -16,6 +17,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'ckeditor'
 
 group :development, :test do
   gem 'thin'
