@@ -26,13 +26,20 @@
 
 
 <script type="text/javascript">
-  $(document).ready(function () {
-    $('pre code').each(function (i, block) {
-      hljs.highlightBlock(block);
-    });
-  });
-</script>
+    $(document).ready(function () {
+//        $("body").children().each(function() {
+//            $(this).html($(this).html().replace(/\[\s*\w*\s*code="xml hljs"\]/g,"<pre><code class='xml hljs'>"));
+//            $(this).html($(this).html().replace(/\[\/code\]/g,"</code></pre>"));
+//        });
 
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+
+    });
+
+
+</script>
 <style>
   /*.content-hide:after {*/
   /*content: " +";*/

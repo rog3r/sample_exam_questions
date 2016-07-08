@@ -41,7 +41,6 @@ end
 #  name            :string
 #  description     :text
 #  attempts_number :integer
-#  finished        :boolean
 #  active          :boolean
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null

@@ -1,3 +1,4 @@
+<%= require 'rack/utils' %>
 
 <p>
   <strong>Name:</strong>
@@ -33,7 +34,8 @@
       <ul class="options">
         <% question.options.each do |option| %>
             <li>
-              <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= raw option.text %></label>
+              <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= html_escape(option.text) %></label>
+              <!--<label class="<%#= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%#= Rack::Utils.escape_html(option.text) %></label>-->
             </li>
         <% end %>
       </ul>
@@ -46,4 +48,37 @@
 <div class="actions pull-right">
   <%= link_to t('all'), admin_surveys_path, class: 'btn btn-default' %>
   <%= link_to t('edit'), edit_admin_survey_path(@survey), class: 'btn btn-primary' %>
+  <button onclick="convert()">Convert</button>
 </div>
+
+
+
+
+
+<script type="text/javascript">
+
+    function convert() {
+        $("ul.options").children().each(function() {
+            $(this).html($(this).html().replace(/\[\s*\w*\s*code="xml hljs"\]/g,"<pre><code class='xml hljs'>"));
+            $(this).html($(this).html().replace(/\[\/code\]/g,"</code></pre>"));
+        });
+
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    }
+
+//    $(document).ready(function () {
+//        $("body").children().each(function() {
+//            $(this).html($(this).html().replace(/\[\s*\w*\s*code="xml hljs"\]/g,"<pre><code class='xml hljs'>"));
+//            $(this).html($(this).html().replace(/\[\/code\]/g,"</code></pre>"));
+//        });
+//
+//        $('pre code').each(function (i, block) {
+//            hljs.highlightBlock(block);
+//        });
+//
+//    });
+
+
+</script>
