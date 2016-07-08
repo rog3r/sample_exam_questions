@@ -292,21 +292,25 @@
     color: white;
 }
 
-.btn-facebook:active, .btn-facebook.active, .open > .dropdown-toggle.btn-facebook {
-    color: #fff;
-    background-color: #2d4373;
-    border-color: rgba(0, 0, 0, 0.2)
+.fa-facebook-f:before, .fa-facebook:before {
+    color: white !important;
 }
 
-.btn-facebook:active:hover, .btn-facebook.active:hover, .open > .dropdown-toggle.btn-facebook:hover, .btn-facebook:active:focus, .btn-facebook.active:focus, .open > .dropdown-toggle.btn-facebook:focus, .btn-facebook:active.focus, .btn-facebook.active.focus, .open > .dropdown-toggle.btn-facebook.focus {
-    color: #fff;
-    background-color: #23345a;
-    border-color: rgba(0, 0, 0, 0.2)
-}
+/*.btn-facebook:active, .btn-facebook.active, .open > .dropdown-toggle.btn-facebook {*/
+    /*color: #fff;*/
+    /*background-color: #2d4373;*/
+    /*border-color: rgba(0, 0, 0, 0.2)*/
+/*}*/
 
-.btn-facebook:active, .btn-facebook.active, .open > .dropdown-toggle.btn-facebook {
-    background-image: none
-}
+/*.btn-facebook:active:hover, .btn-facebook.active:hover, .open > .dropdown-toggle.btn-facebook:hover, .btn-facebook:active:focus, .btn-facebook.active:focus, .open > .dropdown-toggle.btn-facebook:focus, .btn-facebook:active.focus, .btn-facebook.active.focus, .open > .dropdown-toggle.btn-facebook.focus {*/
+    /*color: white !important;*/
+    /*background-color: #23345a;*/
+    /*border-color: rgba(0, 0, 0, 0.2)*/
+/*}*/
+
+/*.btn-facebook:active, .btn-facebook.active, .open > .dropdown-toggle.btn-facebook {*/
+    /*background-image: none*/
+/*}*/
 
 .btn-facebook.disabled, .btn-facebook[disabled], fieldset[disabled] .btn-facebook, .btn-facebook.disabled:hover, .btn-facebook[disabled]:hover, fieldset[disabled] .btn-facebook:hover, .btn-facebook.disabled:focus, .btn-facebook[disabled]:focus, fieldset[disabled] .btn-facebook:focus, .btn-facebook.disabled.focus, .btn-facebook[disabled].focus, fieldset[disabled] .btn-facebook.focus, .btn-facebook.disabled:active, .btn-facebook[disabled]:active, fieldset[disabled] .btn-facebook:active, .btn-facebook.disabled.active, .btn-facebook[disabled].active, fieldset[disabled] .btn-facebook.active {
     background-color: #3b5998;
