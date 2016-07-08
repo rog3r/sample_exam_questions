@@ -10,7 +10,6 @@ class Question < ActiveRecord::Base
   # validations
   validates :text, presence: true, allow_blank: false
 
-  # TODO add Explanation Note to model
   # TODO add Topics to model
 
 
@@ -38,6 +37,7 @@ end
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  explanation     :text
+#  weight          :float
 #
 # Indexes
 #

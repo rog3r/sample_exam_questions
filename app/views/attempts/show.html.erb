@@ -3,6 +3,7 @@
 <!--<%#= @attempt.participant %>-->
 <!--</p>-->
 <h2>Result</h2>
+<h2 class="score">Score: <span class="score-passing"><%=@attempt.score %></span></h2>
 <h3> <%= @attempt.survey %> </h3>
 
 <ol class="questions">
@@ -11,7 +12,7 @@
         <h3><%= question.text %></h3>
         <p>
           <strong>multiple choice:</strong> <%= question.multiple_choice %>
-          <strong>weight: 5 </strong>
+          <strong>weight: <%= question.weight %> </strong>
           <strong>correct?:</strong> <%= @attempt.correct_answered_options?(question) %>
         </p>
         <ul class="options">
