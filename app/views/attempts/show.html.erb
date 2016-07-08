@@ -19,7 +19,7 @@
               <% my_options = @attempt.answers.includes(:option).where(options: {question_id: question.id}).pluck(:option_id).compact %>
               <li>
                 <%= check_box_tag 'tos', 'yes', my_options.include?(option.id), class: 'options' %>
-                <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= option.text %></label>
+                <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= html_escape(option.text) %></label>
               </li>
           <% end %>
         </ul>
@@ -30,13 +30,6 @@
           </legend>
           <div id="<%= dom_id(question) %>" class="content-explanation">
             <%= question.explanation %>
-            ou are employed as a developer at PassGuide.com. PassGuide.com has a single Active Directory domain, named
-            PassGuide.com. You are making use of Visual Studio 2012 to create a new ASP.NET<br>
-            MVC application for PassGuide.com. You have configured the application to include pages<br> for Windows
-            Phone 7 users to browse the site. <br>
-            You have been instructed to make sure that the application is updated to allow Windows Phone 7 users to
-            accurately view the modified files. <br>
-            You are required to update a specific method. Which of the following is the method that should be updated?
           </div>
         </fieldset>
 
