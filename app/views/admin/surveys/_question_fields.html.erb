@@ -10,14 +10,11 @@
 
     <div class="form-group">
       <%= f.label :weight %>
-      <%= f.text_field :weight, placeholder: 'weight', class: 'form-control' %>
-    </div>
+      <%= f.text_field :weight, class: 'form-control-short' %>
 
-    <div class="form-group">
       <%= f.label :multiple_choice do %>
           <%= f.check_box :multiple_choice %> Multiple Choice?
       <% end %>
-      <label><%= f.check_box :_destroy %> Delete?</label>
     </div>
 
     <fieldset>
