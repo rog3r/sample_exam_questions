@@ -39,9 +39,12 @@
 
 <% end -%>
 
+<%= content_for :script do %>
+    <%= render 'shared/javascript_highlight_function' %>
+<% end %>
+
 <script>
   $("form").submit(function () {
-   // alert("Submitted");
     $('textarea.escaped').each(
         function (index) {
           var input = $(this);
@@ -57,11 +60,6 @@
 
         }
     );
-
-
-
-
-
   });
 </script>
 

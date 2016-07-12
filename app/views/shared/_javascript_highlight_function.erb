@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+    convert();
+  });
+
+  function convert() {
+    $("ul.convert-code").children().each(function() {
+      $(this).html($(this).html().replace(/\[\s*\w*\s*code="xml hljs"\]/g,"<pre><code class='xml hljs'>"));
+      $(this).html($(this).html().replace(/\[\s*\w*\s*code="css hljs"\]/g,"<pre><code class='css hljs'>"));
+      $(this).html($(this).html().replace(/\[\s*\w*\s*code="javascript"\]/g,"<pre><code class='javascript'>"));
+      $(this).html($(this).html().replace(/\[\/code\]/g,"</code></pre>"));
+    });
+
+    $('pre code').each(function (i, block) {
+      hljs.highlightBlock(block);
+    });
+  }
+</script>

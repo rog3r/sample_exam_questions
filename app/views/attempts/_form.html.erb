@@ -10,7 +10,7 @@
       <% @survey.questions.each do |question| %>
           <li>
             <h3 class="question"><%= question.text %></h3>
-            <ul class="options">
+            <ul class="options convert-code">
               <% question.options.each do |option| %>
                   <% @attempt.answers.build %>
                   <% answer_idx += 1 %>
@@ -32,3 +32,6 @@
 <% end -%>
 
 
+<%= content_for :script do %>
+    <%= render 'shared/javascript_highlight_function' %>
+<% end %>

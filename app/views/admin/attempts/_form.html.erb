@@ -12,7 +12,7 @@
       <% @survey.questions.each do |question| %>
           <li>
             <h3 class="question"><%= question.text %></h3>
-            <ul>
+            <ul class="convert-code">
               <% question.options.each do |option| %>
                   <li>
                     <label>
@@ -20,7 +20,7 @@
                       <% answer_idx += 1 %>
                       <%#= hidden_field_tag "attempt[answers_attributes][#{answer_idx}][question_id]", question.id %>
                       <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %>
-                      <%= option.id %> - <%= option.text %>
+                      <%= option.id %> - <%= option.text.html_safe %>
                     </label>
                   </li>
               <% end %>
@@ -34,3 +34,7 @@
       <%= f.submit class: 'btn btn-primary', id: 'submit_attempt', data: {disable_with: 'processing'} %>
     </div>
 <% end -%>
+
+<%= content_for :script do %>
+    <%= render 'shared/javascript_highlight_function' %>
+<% end %>
