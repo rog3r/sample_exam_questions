@@ -34,7 +34,7 @@
       <ul class="options">
         <% question.options.each do |option| %>
             <li>
-              <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= html_escape(option.text) %></label>
+              <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= raw option.text %></label>
             </li>
         <% end %>
       </ul>
