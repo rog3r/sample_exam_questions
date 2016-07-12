@@ -1,6 +1,7 @@
 <li class="row fields">
   <div class="form-group col-xs-9">
-    <%= f.cktext_area :text, placeholder: 'answer', rows: '3', class: 'form-control' %>
+    <%#= f.cktext_area :text, placeholder: 'answer', rows: '3', class: 'form-control escaped' %>
+    <%= f.text_area :text, placeholder: 'answer', rows: '3', class: 'form-control escaped' %>
   </div>
 
   <div class="checkbox col-xs-2 col-sm-2">

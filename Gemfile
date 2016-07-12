@@ -17,7 +17,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'ckeditor'
+# gem 'ckeditor'
 
 group :development, :test do
   gem 'thin'

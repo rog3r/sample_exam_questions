@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160707135427) do
     t.string   "name"
     t.text     "description"
     t.integer  "attempts_number"
+    t.boolean  "finished"
     t.boolean  "active"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
