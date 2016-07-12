@@ -43,5 +43,7 @@
   <%= link_to t('all'), survey_attempts_path(@survey), class: 'btn btn-default' %>
 </div>
 
-
+<%= content_for :script do %>
+    <%= render 'shared/javascript_highlight_function' %>
+<% end %>
 
