@@ -15,12 +15,12 @@
           <strong>weight: <%= question.weight %> </strong>
           <strong>correct?:</strong> <%= @attempt.correct_answered_options?(question) %>
         </p>
-        <ul class="options">
+        <ul class="options convert-code">
           <% question.options.each do |option| %>
               <% my_options = @attempt.answers.includes(:option).where(options: {question_id: question.id}).pluck(:option_id).compact %>
               <li>
                 <%= check_box_tag 'tos', 'yes', my_options.include?(option.id), class: 'options' %>
-                <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= html_escape(option.text) %></label>
+                <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= option.text.html_safe %></label>
               </li>
           <% end %>
         </ul>

@@ -17,30 +17,12 @@
 <%#= render 'shared/footer' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
 <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'  %>
+<%= render 'shared/javascript_cdn_includes' %>
 
-<%#= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js'  %>
-<%#= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/xml.min.js'  %>
-<%#= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/cs.min.js'  %>
-<%#= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/java.min.js'  %>
-<%#= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/javascript.min.js' %>
-<%#= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/ruby.min.js' %>
+<%#= render 'shared/javascript_highlight_function' %>
 
+<%= yield(:script) if content_for?(:script) %>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-//        $("body").children().each(function() {
-//            $(this).html($(this).html().replace(/\[\s*\w*\s*code="xml hljs"\]/g,"<pre><code class='xml hljs'>"));
-//            $(this).html($(this).html().replace(/\[\/code\]/g,"</code></pre>"));
-//        });
-
-        $('pre code').each(function (i, block) {
-            hljs.highlightBlock(block);
-        });
-
-    });
-
-
-</script>
 <style>
   /*.content-hide:after {*/
   /*content: " +";*/

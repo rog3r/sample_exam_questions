@@ -38,3 +38,38 @@
     </div>
 
 <% end -%>
+
+<%= content_for :script do %>
+    <%= render 'shared/javascript_highlight_function' %>
+<% end %>
+
+<script>
+  $("form").submit(function () {
+    $('textarea.escaped').each(
+        function (index) {
+          var input = $(this);
+
+          var escaped_content = input.val()
+              .replace(/"/g, '&quot;')
+              .replace('”', '&quot;')
+              .replace(/'/g, '&#39;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;');
+
+          input.val(escaped_content);
+
+        }
+    );
+  });
+</script>
+
+
+<!--http://localhost:3000/surveys/3/attempts/18-->
+
+<!--//alert('Type: ' + input.attr('type') + 'Name: ' + input.attr('name') + 'Value: ' + input.val());-->
+<!--var escaped_content = input.val()-->
+<!--.replace(/&/g, '&amp;')-->
+<!--.replace(/>/g, '&gt;')-->
+<!--.replace(/</g, '&lt;')-->
+<!--.replace(/"/g, '&quot;')-->
+<!--.replace(/'/g, '&apos;');-->

@@ -5,24 +5,21 @@
 
     <div class="form-group">
       <%= f.label :text %>
-      <%= f.text_area :text, placeholder: 'question', rows: '6', class: 'form-control' %>
+      <%= f.text_area :text, placeholder: 'question', rows: '6', class: 'form-control escaped' %>
     </div>
 
     <div class="form-group">
       <%= f.label :weight %>
-      <%= f.text_field :weight, placeholder: 'weight', class: 'form-control' %>
-    </div>
+      <%= f.text_field :weight, class: 'form-control-short' %>
 
-    <div class="form-group">
       <%= f.label :multiple_choice do %>
           <%= f.check_box :multiple_choice %> Multiple Choice?
       <% end %>
-      <label><%= f.check_box :_destroy %> Delete?</label>
     </div>
 
     <fieldset>
       <legend>Options </legend>
-      <ol class="lower-alpha">
+      <ol class="lower-alpha convert-code">
         <%= f.fields_for :options do |builder| %>
             <%= render 'option_fields', f: builder %>
         <% end -%>
