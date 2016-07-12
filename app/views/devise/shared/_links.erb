@@ -1,3 +1,11 @@
+<%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+        <a href="<%= omniauth_authorize_path(resource_name, provider) %>" class="btn btn-social-icon btn-<%= provider %>" title="<%= "Sign in with #{provider.to_s.titleize}" %>">
+          <span class="fa fa-<%= provider %>"></span>
+        </a>
+    <% end -%>
+<% end -%>
+
 <%- if controller_name != 'sessions' %>
     <%= link_to t('devise.shared.links.sign_in', default: 'Sign in'), new_session_path(resource_name), class: 'btn btn-info' %>
 <% end -%>
@@ -18,12 +26,6 @@
     <%= link_to t('devise.shared.links.didn_t_receive_unlock_instructions', default: "Didn't receive unlock instructions?"), new_unlock_path(resource_name), class: 'btn btn-default' %>
 <% end -%>
 
-<%- if devise_mapping.omniauthable? %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-        <a href="<%= omniauth_authorize_path(resource_name, provider) %>" class="btn btn-social-icon btn-<%= provider %>" title="<%= "Sign in with #{provider.to_s.titleize}" %>">
-          <span class="fa fa-<%= provider %>"></span>
-        </a>
-    <% end -%>
-<% end -%>
+
 
 
