@@ -20,7 +20,7 @@
                       <% answer_idx += 1 %>
                       <%#= hidden_field_tag "attempt[answers_attributes][#{answer_idx}][question_id]", question.id %>
                       <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %>
-                      <%= option.id %> - <%= option.text.html_safe %>
+                      <%= option.text.html_safe %>
                     </label>
                   </li>
               <% end %>
