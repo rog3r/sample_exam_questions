@@ -25,3 +25,26 @@ en:
   ok: "Ok"
   cancel: "Cancel"
   welcome: "Welcome"
+  activerecord:
+    models:
+      question:
+        one: Question
+        other: Questions
+    attributes:
+      question:
+        text: Text
+        weight: Weight
+      survey/questions:
+        base: 'Questions'
+    errors:
+      models:
+        survey:
+          attributes:
+            base:
+              must_have_at_least_one_question: "Must have at least one question"
+        question:
+          attributes:
+            base:
+              must_have_at_least_one_option: "Must have at least one option"
+      template:
+        body: 'Please check the following fields:'

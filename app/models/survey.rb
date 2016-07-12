@@ -10,6 +10,7 @@ class Survey < ActiveRecord::Base
 
   # validations
   #validates :attempts_number, numericality: { only_integer: true, greater_than: -1 }
+  validate :at_least_one_question
   validates :description, :name, presence: true, allow_blank: false
   validates :questions, nested_attributes_uniqueness: {field: :text}
 
@@ -24,6 +25,12 @@ class Survey < ActiveRecord::Base
 
   def incorrect_options# returns all the incorrect options for current surveys
     return self.questions.map(&:incorrect_options).flatten
+  end
+
+  private
+
+  def at_least_one_question
+    errors.add(:base, :must_have_at_least_one_question) if questions.size < 1
   end
 
   # def available_for_participant?(participant)
