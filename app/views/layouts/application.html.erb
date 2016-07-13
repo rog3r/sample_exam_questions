@@ -7,9 +7,8 @@
   <meta name="author" content="RJO">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
-  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'  %>
-  <%#= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/railscasts.min.css' %>
-  <%#= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/idea.min.css' %>
+  <%= render 'shared/stylesheet_cdn_includes' %>
+
   <%= csrf_meta_tags %>
 </head>
 <style>
@@ -70,7 +69,7 @@
 </div>
 <%#= render 'shared/footer' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
-<%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'  %>
+
 <%= render 'shared/javascript_cdn_includes' %>
 
 <%#= render 'shared/javascript_highlight_function' %>
