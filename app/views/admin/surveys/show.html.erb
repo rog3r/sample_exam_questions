@@ -30,7 +30,7 @@
       <span class="convert-code-title"><%= question.text.html_safe %></span>
       <p><strong>multiple choice:</strong> <%= question.multiple_choice %>  <strong>weight: <%= question.weight %></strong></p>
 
-      <ol class="lower-alpha convert-code-options">
+      <ol class="options lower-alpha convert-code-options">
         <% question.options.each do |option| %>
             <li>
               <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= option.text.html_safe %></label>
