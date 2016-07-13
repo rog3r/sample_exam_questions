@@ -11,7 +11,7 @@
       <% answer_idx = 0 %>
       <% @survey.questions.each do |question| %>
           <li>
-            <h3 class="question"><%= question.text %></h3>
+            <h4 class="question"><%= question.text %></h4>
             <ul class="convert-code-options">
               <% question.options.each do |option| %>
                   <li>

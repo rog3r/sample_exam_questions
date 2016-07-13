@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require font-awesome
- *= require_tree .
+ *= require highlight/railscasts.min
  *= require_self
  */
 
@@ -42,6 +42,9 @@ ol.lower-alpha {
     list-style-type: lower-alpha;
 }
 
+ul.questions {
+    padding-left: 0;
+}
 ul.questions, ul.options {
     list-style-type: none;
 }
