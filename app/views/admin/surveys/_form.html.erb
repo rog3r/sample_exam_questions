@@ -38,26 +38,49 @@
     </div>
 
 <% end -%>
+<%= content_for :script do %>
+    <script type='text/javascript'>
+        $("form").submit(function () {
+            $('textarea.escaped').each(
+                    function (index) {
+                        var input = $(this);
 
-<script>
-  $("form").submit(function () {
-    $('textarea.escaped').each(
-        function (index) {
-          var input = $(this);
+                        var escaped_content = input.val()
+                                .replace(/"/g, '&quot;')
+                                .replace('”', '&quot;')
+                                .replace(/'/g, '&#39;')
+                                .replace(/</g, '&lt;')
+                                .replace(/>/g, '&gt;');
 
-          var escaped_content = input.val()
-              .replace(/"/g, '&quot;')
-              .replace('”', '&quot;')
-              .replace(/'/g, '&#39;')
-              .replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;');
+                        input.val(escaped_content);
 
-          input.val(escaped_content);
+                    }
+            );
+        });
 
+
+        $(document).ready(function () {
+            turn_textareas_autogrow();
+        });
+
+        function turn_textareas_autogrow(){
+
+            $('textarea.autogrow').each(function () {//fix grow onload
+                autogrower($(this));
+            });
+
+            $('textarea.autogrow').bind('input keyup change cut paste', function () {
+                autogrower($(this));
+            });
         }
-    );
-  });
-</script>
+
+        function autogrower(element){
+            $(element).css("height", 'auto');
+            $(element).css("height", element[0].scrollHeight + 3 + 'px');
+        }
+    </script>
+<% end %>
+
 
 
 <!--http://localhost:3000/surveys/3/attempts/18-->
