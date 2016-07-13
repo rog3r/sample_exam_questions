@@ -11,20 +11,19 @@
       <% answer_idx = 0 %>
       <% @survey.questions.each do |question| %>
           <li>
-            <h3 class="question"><%= question.text %></h3>
-            <ul class="convert-code">
+            <h4 class="question"><%= question.text.html_safe %></h4>
+            <ol class="options lower-alpha convert-code-options">
               <% question.options.each do |option| %>
                   <li>
                     <label>
                       <% @attempt.answers.build %>
                       <% answer_idx += 1 %>
-                      <%#= hidden_field_tag "attempt[answers_attributes][#{answer_idx}][question_id]", question.id %>
                       <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %>
                       <%= option.text.html_safe %>
                     </label>
                   </li>
               <% end %>
-            </ul>
+            </ol>
             <hr/>
           </li>
       <% end %>

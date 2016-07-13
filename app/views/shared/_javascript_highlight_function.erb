@@ -7,13 +7,21 @@
     });
 
   function convert() {
-    $("ul.convert-code").children().each(function() {
+    $(".convert-code-options").children().each(function() {
       $(this).html($(this).html().replace(/\[\s*\w*\s*code="xml hljs"\]/g,"<pre><code class='xml hljs'>"));
       $(this).html($(this).html().replace(/\[\s*\w*\s*code="cs hljs"\]/g,"<pre><code class='cs hljs'>"));
       $(this).html($(this).html().replace(/\[\s*\w*\s*code="css hljs"\]/g,"<pre><code class='css hljs'>"));
       $(this).html($(this).html().replace(/\[\s*\w*\s*code="javascript"\]/g,"<pre><code class='javascript'>"));
       $(this).html($(this).html().replace(/\[\/code\]/g,"</code></pre>"));
     });
+
+    $(".convert-code-title").each(function() {
+      $(this).html($(this).html().replace(/\[\s*\w*\s*code="xml hljs"\]/g,"<pre><code class='xml hljs'>"));
+      $(this).html($(this).html().replace(/\[\s*\w*\s*code="css hljs"\]/g,"<pre><code class='css hljs'>"));
+      $(this).html($(this).html().replace(/\[\s*\w*\s*code="javascript"\]/g,"<pre><code class='javascript'>"));
+      $(this).html($(this).html().replace(/\[\/code\]/g,"</code></pre>"));
+    });
+
 
     $('pre code').each(function (i, block) {
       hljs.highlightBlock(block);

@@ -32,16 +32,12 @@
       <%= link_to_add_fields '', f, :questions, class: 'glyphicon glyphicon-plus btn btn-primary add_fields_link pull-right ' %>
     </div>
 
-    <div class="actions pull-right">
+    <div class="actions pull-right align-actions" >
       <%= link_to t('back'), admin_surveys_path, class: 'btn btn-default' %>
       <%= f.submit class: 'btn btn-primary', id: 'submit_survey', data: {disable_with: 'processing'} %>
     </div>
 
 <% end -%>
-
-<%= content_for :script do %>
-    <%= render 'shared/javascript_highlight_function' %>
-<% end %>
 
 <script>
   $("form").submit(function () {

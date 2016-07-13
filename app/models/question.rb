@@ -6,8 +6,8 @@ class Question < ActiveRecord::Base
                                 allow_destroy: true,
                                 reject_if: ->(a) { a[:text].blank? }
 
-
   # validations
+  validate :at_least_one_option
   validates :text, presence: true, allow_blank: false
 
   # TODO add Topics to model
@@ -19,6 +19,12 @@ class Question < ActiveRecord::Base
 
   def incorrect_options
     return options.incorrects
+  end
+
+  private
+
+  def at_least_one_option
+    errors.add(:base, :must_have_at_least_one_option) if options.size < 1
   end
 
   # def self.correct_options(question)

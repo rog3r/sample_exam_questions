@@ -7,15 +7,16 @@
 <h3> <%= @attempt.survey %> </h3>
 
 <ol class="questions">
-  <% @attempt.answered_questions.each do |question| %>
+  <% @attempt.answered_questions.each.with_index(1) do |question, index| %>
       <li>
-        <h3><%= question.text %></h3>
+        <h4>Question <%= index %></pre></h4>
+        <span class="convert-code-title"><%= question.text.html_safe %></span>
         <p>
           <strong>multiple choice:</strong> <%= question.multiple_choice %>
           <strong>weight: <%= question.weight %> </strong>
           <strong>correct?:</strong> <%= @attempt.correct_answered_options?(question) %>
         </p>
-        <ul class="options convert-code">
+        <ul class="options convert-code-options">
           <% question.options.each do |option| %>
               <% my_options = @attempt.answers.includes(:option).where(options: {question_id: question.id}).pluck(:option_id).compact %>
               <li>

@@ -11,12 +11,21 @@
  * file per style scope.
  *
  *= require font-awesome
- *= require_tree .
+ *= require highlight/railscasts.min
  *= require_self
  */
 
 body {
     padding-bottom: 50px;
+}
+
+div .fields{
+    margin-left: 15px;
+}
+
+div .align-actions{
+    margin-top: 60px;
+    margin-bottom: 15px;
 }
 
 .footer {
@@ -33,7 +42,10 @@ ol.lower-alpha {
     list-style-type: lower-alpha;
 }
 
-ul.options {
+ul.questions {
+    padding-left: 0;
+}
+ul.questions, ul.options {
     list-style-type: none;
 }
 
@@ -56,7 +68,8 @@ ul.options {
 .score-reproving{
     color: #d9534f;
 }
-ul.options li:nth-child(odd) {
+
+ol.options li:nth-child(odd), ul.options li:nth-child(odd) {
     background-color: #f8f8f8;
     border-color: #e7e7e7;
 }
@@ -72,16 +85,16 @@ ul.options li:nth-child(odd) {
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
-.convert-code li label{
-    display: block;
-}
+/*.convert-code li label{*/
+    /*display: block;*/
+/*}*/
 
-.convert-code li label input[type=checkbox], .convert-code li label pre{
-    display:inline-block;
-    vertical-align:middle;
-}
+/*.convert-code li label input[type=checkbox], .convert-code li label pre{*/
+    /*display:inline-block;*/
+    /*vertical-align:middle;*/
+/*}*/
 
-.convert-code li label pre{
-    margin-top: 10px;
-    margin-left: 10px;
-}
+/*.convert-code li label pre{*/
+    /*margin-top: 10px;*/
+    /*margin-left: 10px;*/
+/*}*/

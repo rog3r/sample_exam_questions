@@ -9,8 +9,8 @@
       <% answer_idx = 0 %>
       <% @survey.questions.each do |question| %>
           <li>
-            <h3 class="question"><%= question.text %></h3>
-            <ul class="options convert-code">
+            <h4 class="question"><%= question.text.html_safe %></h4>
+            <ol class="options lower-alpha convert-code-options">
               <% question.options.each do |option| %>
                   <% @attempt.answers.build %>
                   <% answer_idx += 1 %>
@@ -20,7 +20,7 @@
                     <% end %>
                   </li>
               <% end %>
-            </ul>
+            </ol>
             <hr/>
           </li>
       <% end %>

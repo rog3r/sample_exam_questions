@@ -1,4 +1,4 @@
-pre { 
+pre {
     padding: 0px !important;
 }
 .hljs {
@@ -7,6 +7,8 @@ pre {
     padding: 0.5em;
     background: #232323;
     color: #e6e1dc
+    /*color: #000;*/
+    /*background: #fff*/
 }
 
 .hljs-comment, .hljs-quote {
