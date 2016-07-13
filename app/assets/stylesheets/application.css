@@ -19,6 +19,15 @@ body {
     padding-bottom: 50px;
 }
 
+div .fields{
+    margin-left: 15px;
+}
+
+div .align-actions{
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
