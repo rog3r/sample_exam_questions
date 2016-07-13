@@ -12,7 +12,7 @@
       <% @survey.questions.each do |question| %>
           <li>
             <h4 class="question"><%= question.text.html_safe %></h4>
-            <ul class="convert-code-options">
+            <ol class="options lower-alpha convert-code-options">
               <% question.options.each do |option| %>
                   <li>
                     <label>
@@ -23,7 +23,7 @@
                     </label>
                   </li>
               <% end %>
-            </ul>
+            </ol>
             <hr/>
           </li>
       <% end %>
