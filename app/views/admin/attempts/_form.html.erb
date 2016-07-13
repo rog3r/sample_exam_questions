@@ -12,7 +12,7 @@
       <% @survey.questions.each do |question| %>
           <li>
             <h3 class="question"><%= question.text %></h3>
-            <ul class="convert-code">
+            <ul class="convert-code-options">
               <% question.options.each do |option| %>
                   <li>
                     <label>

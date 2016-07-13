@@ -1,5 +1,3 @@
-<%= require 'rack/utils' %>
-
 <p>
   <strong>Name:</strong>
   <%= @survey.name %>
@@ -28,14 +26,14 @@
 <ul class="questions ">
 <% @survey.questions.each.with_index(1) do |question, index| %>
     <li>
-      <h4> Question <%= index %></pre></h4>
-      <pre><%= question.text.html_safe %></pre>
+      <h4>Question <%= index %></pre></h4>
+      <span class="convert-code-title"><%= question.text.html_safe %></span>
       <p><strong>multiple choice:</strong> <%= question.multiple_choice %>  <strong>weight: <%= question.weight %></strong></p>
 
-      <ul class="options convert-code">
+      <ul class="options convert-code-options">
         <% question.options.each do |option| %>
             <li>
-              <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= raw option.text %></label>
+              <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= option.text.html_safe %></label>
             </li>
         <% end %>
       </ul>

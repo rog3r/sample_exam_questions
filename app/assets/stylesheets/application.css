@@ -81,16 +81,16 @@ ul.options li:nth-child(odd) {
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
-.convert-code li label{
-    display: block;
-}
+/*.convert-code li label{*/
+    /*display: block;*/
+/*}*/
 
-.convert-code li label input[type=checkbox], .convert-code li label pre{
-    display:inline-block;
-    vertical-align:middle;
-}
+/*.convert-code li label input[type=checkbox], .convert-code li label pre{*/
+    /*display:inline-block;*/
+    /*vertical-align:middle;*/
+/*}*/
 
-.convert-code li label pre{
-    margin-top: 10px;
-    margin-left: 10px;
-}
+/*.convert-code li label pre{*/
+    /*margin-top: 10px;*/
+    /*margin-left: 10px;*/
+/*}*/

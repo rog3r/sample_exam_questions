@@ -10,7 +10,7 @@
       <% @survey.questions.each do |question| %>
           <li>
             <h3 class="question"><%= question.text %></h3>
-            <ul class="options convert-code">
+            <ul class="options convert-code-options">
               <% question.options.each do |option| %>
                   <% @attempt.answers.build %>
                   <% answer_idx += 1 %>
