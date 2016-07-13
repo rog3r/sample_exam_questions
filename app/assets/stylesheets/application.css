@@ -33,7 +33,7 @@ ol.lower-alpha {
     list-style-type: lower-alpha;
 }
 
-ul.options {
+ul.questions, ul.options {
     list-style-type: none;
 }
 

@@ -25,10 +25,11 @@
   <%= @survey.active %>
 </p>
 
-<ol class="questions">
-<% @survey.questions.each do |question| %>
+<ul class="questions ">
+<% @survey.questions.each.with_index(1) do |question, index| %>
     <li>
-      <h3><%= question.text %></h3>
+      <h4> Question <%= index %></pre></h4>
+      <pre><%= question.text.html_safe %></pre>
       <p><strong>multiple choice:</strong> <%= question.multiple_choice %>  <strong>weight: <%= question.weight %></strong></p>
 
       <ul class="options convert-code">
@@ -42,7 +43,7 @@
       <strong>Explanation:</strong> <br /><%= question.explanation %>
     </li><hr />
 <% end %>
-</ol>
+</ul>
 
 <div class="actions pull-right">
   <%= link_to t('all'), admin_surveys_path, class: 'btn btn-default' %>
