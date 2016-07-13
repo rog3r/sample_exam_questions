@@ -13,7 +13,7 @@
     <% @surveys.each do |survey| %>
       <tr>
         <td><%= survey.name %></td>
-        <td><%= survey.description %></td>
+        <td><%= truncate(survey.description,  length: 200) %></td>
         <td><%= link_to 'Start', new_survey_attempt_path(survey), class: 'btn btn-primary'%></td>
       </tr>
     <% end %>
@@ -21,8 +21,6 @@
 </table>
 
 <br>
-
-
 
 <div class="actions pull-right">
   <%= link_to t('back'), surveys_path, class: 'btn btn-default' %>

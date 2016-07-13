@@ -14,14 +14,13 @@
   <tbody>
     <% @surveys.each do |survey| %>
       <tr>
-        <td><%= survey.name %></td>
+        <td><%= link_to(survey.name, [:admin, survey]) %></td>
         <td><%= survey.description %></td>
         <td><%= survey.attempts_number %></td>
         <td><%= survey.active %></td>
-        <td><%= link_to 'Start', new_admin_survey_attempt_path(survey), class: 'btn btn-primary'%></td>
-        <td><%= link_to 'Show', [:admin, survey] %></td>
-        <td><%= link_to 'Edit', edit_admin_survey_path(survey) %></td>
-        <td><%= link_to 'Destroy', [:admin, survey], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', new_survey_attempt_path(survey), class: 'glyphicon glyphicon-play btn-xs btn-success', title: "Start"%></td>
+        <td><%= link_to '', edit_admin_survey_path(survey), class: 'glyphicon glyphicon-pencil btn-xs btn-primary', title: "Editar" %></td>
+        <td><%= link_to '', admin_survey_path(survey), method: :delete, data: {confirm:'Are you sure?', ok:  'ok' , cancel:  'cancel'}, class: 'glyphicon glyphicon-remove btn-xs btn-danger', title: "Excluir" %></td>
       </tr>
     <% end %>
   </tbody>

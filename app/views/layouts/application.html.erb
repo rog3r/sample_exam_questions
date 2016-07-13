@@ -64,20 +64,15 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/bootstrap_dialog_modal' %>
 <%= render 'shared/flash_messages' %>
+
 <div id="content" class="content col-md-12">
   <%= yield %>
 </div>
+
 <%#= render 'shared/footer' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
-
 <%= render 'shared/javascript_cdn_includes' %>
-
-<%#= render 'shared/javascript_highlight_function' %>
-
 <%= yield(:script) if content_for?(:script) %>
-
-
-
 
 </body>
 </html>
