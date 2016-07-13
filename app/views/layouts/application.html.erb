@@ -2,27 +2,15 @@
 <html>
 <head>
   <title>Survey4Certification</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="author" content="RJO">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
   <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'  %>
   <%#= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/railscasts.min.css' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<%= render 'shared/navbar' %>
-<%= render 'shared/bootstrap_dialog_modal' %>
-<%= render 'shared/flash_messages' %>
-<div id="content" class="content col-md-12">
-  <%= yield %>
-</div>
-<%#= render 'shared/footer' %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
-<%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'  %>
-<%= render 'shared/javascript_cdn_includes' %>
-
-<%#= render 'shared/javascript_highlight_function' %>
-
-<%= yield(:script) if content_for?(:script) %>
-
 <style>
   /*.content-hide:after {*/
   /*content: " +";*/
@@ -60,7 +48,35 @@
     border-bottom: 0px;
   }
 
+
+  input[type=checkbox], input[type=radio] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+  }
+  input[type=radio] {
+    bottom: 2px;
+  }
+
 </style>
+
+<body>
+<%= render 'shared/navbar' %>
+<%= render 'shared/bootstrap_dialog_modal' %>
+<%= render 'shared/flash_messages' %>
+<div id="content" class="content col-md-12">
+  <%= yield %>
+</div>
+<%#= render 'shared/footer' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+<%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'  %>
+<%= render 'shared/javascript_cdn_includes' %>
+
+<%#= render 'shared/javascript_highlight_function' %>
+
+<%= yield(:script) if content_for?(:script) %>
+
+
 
 
 </body>
