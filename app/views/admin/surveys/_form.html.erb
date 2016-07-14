@@ -61,6 +61,9 @@
 
         $(document).ready(function () {
             turn_textareas_autogrow();
+            setTimeout(function(){//page going to top
+                $('.add_fields:last').focus();
+            }, 200);
         });
 
         function turn_textareas_autogrow(){

@@ -3,7 +3,7 @@
 <!--<%#= @attempt.participant %>-->
 <!--</p>-->
 <h2>Result</h2>
-<h2 class="score">Score: <span class="score-passing"><%=@attempt.score %></span></h2>
+<h2 class="score">Score: <span class="score-passing"><%= @attempt.score %></span></h2>
 <h3> <%= @attempt.survey %> </h3>
 
 <ol class="questions">
@@ -11,6 +11,7 @@
       <li>
         <h4>Question <%= index %></pre></h4>
         <span class="convert-code-title"><%= question.text.html_safe %></span>
+
         <p>
           <strong>multiple choice:</strong> <%= question.multiple_choice %>
           <strong>weight: <%= question.weight %> </strong>
@@ -19,9 +20,12 @@
         <ul class="options convert-code-options">
           <% question.options.each do |option| %>
               <% my_options = @attempt.answers.includes(:option).where(options: {question_id: question.id}).pluck(:option_id).compact %>
+              <% marcada = my_options.include?(option.id) %>
               <li>
-                <%= check_box_tag 'tos', 'yes', my_options.include?(option.id), class: 'options' %>
-                <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= option.text.html_safe %></label>
+                <label class="<%= option.correct? ? 'correct-answer' : ('wrong-answer' if marcada) %>">
+                  <%= check_box_tag 'tos', 'yes', marcada, class: 'options' %>
+                  <%= option.text.html_safe %>
+                </label>
               </li>
           <% end %>
         </ul>
