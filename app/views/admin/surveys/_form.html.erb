@@ -38,19 +38,12 @@
     </div>
 
 <% end -%>
-
-<script>
-    $(document).ready(function () {
-        alert("foi");
-//        $(".add_fields:last").focus();
-        $(".add_fields:last").scrollToBottom(1000);
-        alert("foi");
-    });
-
-    $("form").submit(function () {
-        $('textarea.escaped').each(
-                function (index) {
-                    var input = $(this);
+<%= content_for :script do %>
+    <script type='text/javascript'>
+        $("form").submit(function () {
+            $('textarea.escaped').each(
+                    function (index) {
+                        var input = $(this);
 
                     var escaped_content = input.val()
                             .replace(/"/g, '&quot;')
@@ -64,7 +57,30 @@
                 }
         );
     });
-</script>
+
+
+        $(document).ready(function () {
+            turn_textareas_autogrow();
+        });
+
+        function turn_textareas_autogrow(){
+
+            $('textarea.autogrow').each(function () {//fix grow onload
+                autogrower($(this));
+            });
+
+            $('textarea.autogrow').bind('input keyup change cut paste', function () {
+                autogrower($(this));
+            });
+        }
+
+        function autogrower(element){
+            $(element).css("height", 'auto');
+            $(element).css("height", element[0].scrollHeight + 3 + 'px');
+        }
+    </script>
+<% end %>
+
 
 
 <!--http://localhost:3000/surveys/3/attempts/18-->
