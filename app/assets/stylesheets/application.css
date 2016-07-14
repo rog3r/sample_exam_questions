@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require font-awesome
+ *= require bootstrap-social
  *= require highlight/railscasts.min
  *= require_self
  */

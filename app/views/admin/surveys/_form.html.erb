@@ -29,10 +29,10 @@
             <%= render 'question_fields', f: builder %>
         <% end %>
       </div>
-      <%= link_to_add_fields '', f, :questions, class: 'glyphicon glyphicon-plus btn btn-primary add_fields_link pull-right ' %>
+      <%= link_to_add_fields '', f, :questions, class: 'glyphicon glyphicon-plus btn btn-primary add_fields_link pull-right add' %>
     </div>
 
-    <div class="actions pull-right align-actions" >
+    <div class="actions pull-right align-actions">
       <%= link_to t('back'), admin_surveys_path, class: 'btn btn-default' %>
       <%= f.submit class: 'btn btn-primary', id: 'submit_survey', data: {disable_with: 'processing'} %>
     </div>
@@ -40,23 +40,30 @@
 <% end -%>
 
 <script>
-  $("form").submit(function () {
-    $('textarea.escaped').each(
-        function (index) {
-          var input = $(this);
+    $(document).ready(function () {
+        alert("foi");
+//        $(".add_fields:last").focus();
+        $(".add_fields:last").scrollToBottom(1000);
+        alert("foi");
+    });
 
-          var escaped_content = input.val()
-              .replace(/"/g, '&quot;')
-              .replace('”', '&quot;')
-              .replace(/'/g, '&#39;')
-              .replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;');
+    $("form").submit(function () {
+        $('textarea.escaped').each(
+                function (index) {
+                    var input = $(this);
 
-          input.val(escaped_content);
+                    var escaped_content = input.val()
+                            .replace(/"/g, '&quot;')
+                            .replace('”', '&quot;')
+                            .replace(/'/g, '&#39;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;');
 
-        }
-    );
-  });
+                    input.val(escaped_content);
+
+                }
+        );
+    });
 </script>
 
 
