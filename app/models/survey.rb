@@ -45,7 +45,7 @@ class Survey < ActiveRecord::Base
     new_record.id = data_hash['id']
     new_record.name = data_hash['name']
     new_record.description = data_hash['description']
-    new_record.attempts_number = data_hash['attempts_number'] 
+    new_record.attempts_number = data_hash['attempts_number']
     new_record.active = data_hash['active']
 
     data_hash['questions'].each do |question|
