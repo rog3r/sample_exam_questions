@@ -42,7 +42,7 @@ class Survey < ActiveRecord::Base
 
 
     new_record = Survey.new
-    new_record.id = data_hash['id']
+    #new_record.id = data_hash['id']
     new_record.name = data_hash['name']
     new_record.description = data_hash['description']
     new_record.attempts_number = data_hash['attempts_number']
