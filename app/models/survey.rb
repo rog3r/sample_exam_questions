@@ -27,6 +27,51 @@ class Survey < ActiveRecord::Base
     return self.questions.map(&:incorrect_options).flatten
   end
 
+
+  # def self.import_from_csv(file)
+  #   CSV.foreach(file.path, headers: true) do |row|
+  #
+  #     product_hash = row.to_hash # exclude the price field
+  #     product = Product.where(id: product_hash["id"])
+  #
+  #     if product.count == 1
+  #       product.first.update_attributes(product_hash.except("price"))
+  #     else
+  #       Product.create!(product_hash)
+  #     end # end if !product.nil?
+  #   end # end CSV.foreach
+  # end # end self.import(file)
+
+
+  def self.import_from_json(file)
+    JSON.parse(open("#{Rails.root}/doc/teams.json").read).each do |data|
+      survey = Survey.new(data)
+      survey.id = data['id']
+      survey.save!
+    end
+  end
+
+
+
+  # records = JSON.parse(File.read('path/to/file.json'))
+  # records.each do |record|
+  #   ModelName.create!(record)
+  # end
+
+
+  # json = ActiveSupport::JSON.decode(File.read('db/seeds/countries.json'))
+  # json.each do |a|
+  #   Country.create!(a['country'], without_protection: true)
+  # end
+
+
+  # JSON.parse(open("#{Rails.root}/doc/teams.json").read).each do |stuff|
+  #   team = Team.new(stuff)
+  #   team.id = stuff['id']
+  #   team.save!
+  # end
+
+
   private
 
   def at_least_one_question
