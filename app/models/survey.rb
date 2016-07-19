@@ -29,48 +29,44 @@ class Survey < ActiveRecord::Base
 
 
   # def self.import_from_csv(file)
-  #   CSV.foreach(file.path, headers: true) do |row|
-  #
-  #     product_hash = row.to_hash # exclude the price field
-  #     product = Product.where(id: product_hash["id"])
-  #
-  #     if product.count == 1
-  #       product.first.update_attributes(product_hash.except("price"))
-  #     else
-  #       Product.create!(product_hash)
-  #     end # end if !product.nil?
-  #   end # end CSV.foreach
+  #   file = File.read(file.path)
   # end # end self.import(file)
 
 
-  def self.import_from_json(file)
-    JSON.parse(open("#{Rails.root}/doc/teams.json").read).each do |data|
-      survey = Survey.new(data)
-      survey.id = data['id']
-      survey.save!
+
+  require 'json'
+  def self.import_from_json#(file)
+
+    file = File.read("#{Rails.root}/doc/survey_1.json")
+    data_hash = JSON.parse(file)
+
+
+    new_record = Survey.new
+    new_record.id = data_hash['id']
+    new_record.name = data_hash['name']
+    new_record.description = data_hash['description']
+    new_record.attempts_number = data_hash['attempts_number']
+    new_record.finished = data_hash['finished']
+    new_record.active = data_hash['active']
+
+    data_hash['questions'].each do |question|
+      new_question =  new_record.questions.new
+      #new_question.id              = question['id']
+      new_question.survey_id       = question['survey_id']
+      new_question.text            = question['text']
+      new_question.multiple_choice = question['multiple_choice']
+      new_question.weight          = question['weight']
+      question['options'].each do |option|
+        new_option =  new_question.options.new
+        #new_option.id          = option['id']
+        new_option.question_id = option['question_id']
+        new_option.text        = option['text']
+        new_option.correct     = option['correct']
+      end
     end
+
+    new_record.save
   end
-
-
-
-  # records = JSON.parse(File.read('path/to/file.json'))
-  # records.each do |record|
-  #   ModelName.create!(record)
-  # end
-
-
-  # json = ActiveSupport::JSON.decode(File.read('db/seeds/countries.json'))
-  # json.each do |a|
-  #   Country.create!(a['country'], without_protection: true)
-  # end
-
-
-  # JSON.parse(open("#{Rails.root}/doc/teams.json").read).each do |stuff|
-  #   team = Team.new(stuff)
-  #   team.id = stuff['id']
-  #   team.save!
-  # end
-
 
   private
 
@@ -93,6 +89,7 @@ end
 #  name            :string
 #  description     :text
 #  attempts_number :integer
+#  finished        :boolean
 #  active          :boolean
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
