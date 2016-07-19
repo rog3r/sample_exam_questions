@@ -43,7 +43,7 @@ end
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  explanation     :text
-#  weight          :float
+#  weight          :float            default(0.0)
 #
 # Indexes
 #
