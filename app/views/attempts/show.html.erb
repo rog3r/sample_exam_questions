@@ -20,12 +20,18 @@
         <ul class="options convert-code-options">
           <% question.options.each do |option| %>
               <% my_options = @attempt.answers.includes(:option).where(options: {question_id: question.id}).pluck(:option_id).compact %>
-              <% marcada = my_options.include?(option.id) %>
-              <li>
-                <label class="<%= option.correct? ? 'correct-answer' : ('wrong-answer' if marcada) %>">
-                  <%= check_box_tag 'tos', 'yes', marcada, class: 'options' %>
-                  <%= option.text.html_safe %>
-                </label>
+              <% checked = my_options.include?(option.id) %>
+              <li class="<%= option.correct? ? 'correct-answer' : ('wrong-answer' if checked) %>">
+                <div class="parent">
+                  <div class="child">
+                    <%= check_box_tag 'tos', 'yes', checked, class: 'options' %>
+                  </div>
+                  <div class="child">
+                    <label>
+                      <%= option.text.html_safe %>
+                    </label>
+                  </div>
+                </div>
               </li>
           <% end %>
         </ul>
