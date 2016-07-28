@@ -1,16 +1,17 @@
 class Survey < ActiveRecord::Base
   # associations
-  has_many :attempts,  dependent: :destroy
+  has_many :attempts, dependent: :destroy
   has_many :questions, dependent: :destroy
   accepts_nested_attributes_for :questions, allow_destroy: true, reject_if: lambda { |question| question[:text].blank? }
 
   # scopes
-  scope :active,   -> { where(active: true) }
+  scope :active, -> { where(active: true) }
   scope :inactive, -> { where(active: false) }
 
   # validations
   #validates :attempts_number, numericality: { only_integer: true, greater_than: -1 }
   validate :at_least_one_question
+  # validate :at_least_one_option_correct
   validates :description, :name, presence: true, allow_blank: false
   validates :questions, nested_attributes_uniqueness: {field: :text}
 
@@ -18,12 +19,13 @@ class Survey < ActiveRecord::Base
     name
   end
 
-  def correct_options# returns all the correct options for current surveys
+
+  def correct_options # returns all the correct options for current surveys
     return self.questions.map(&:correct_options).flatten
   end
 
 
-  def incorrect_options# returns all the incorrect options for current surveys
+  def incorrect_options # returns all the incorrect options for current surveys
     return self.questions.map(&:incorrect_options).flatten
   end
 

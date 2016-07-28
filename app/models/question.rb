@@ -7,11 +7,17 @@ class Question < ActiveRecord::Base
                                 reject_if: ->(a) { a[:text].blank? }
 
   # validations
+  validate :at_least_one_option_correct
   validate :at_least_one_option
+
+
   validates :text, presence: true, allow_blank: false
 
   # TODO add Topics to model
 
+  def has_correct_options?
+    options.corrects.any?
+  end
 
   def correct_options
     return options.corrects
@@ -25,6 +31,12 @@ class Question < ActiveRecord::Base
 
   def at_least_one_option
     errors.add(:base, :must_have_at_least_one_option) if options.size < 1
+  end
+
+  def at_least_one_option_correct
+    choices_true = []
+    self.options.each{|option| choices_true << option.correct if option.correct == true }
+    errors.add(:base, :must_have_at_least_one_option_correct, {text: self.text}) unless choices_true.any?
   end
 
   # def self.correct_options(question)
