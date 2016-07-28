@@ -32,8 +32,8 @@
 
       <ol class="options lower-alpha convert-code-options">
         <% question.options.each do |option| %>
-            <li>
-              <label class="<%= option.correct? ? 'correct-answer' : 'wrong-answer' %>"> <%= option.text.html_safe %></label>
+            <li class="<%= option.correct? ? 'correct-answer' : 'wrong-answer'%>">
+              <label><%= option.text.html_safe %></label>
             </li>
         <% end %>
       </ol>

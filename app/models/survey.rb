@@ -29,6 +29,46 @@ class Survey < ActiveRecord::Base
     return self.questions.map(&:incorrect_options).flatten
   end
 
+
+  # def self.import_from_csv(file)
+  #   file = File.read(file.path)
+  # end # end self.import(file)
+
+
+
+  require 'json'
+  def self.import_from_json#(file)
+
+    file = File.read("#{Rails.root}/doc/survey_1.json")
+    data_hash = JSON.parse(file)
+
+
+    new_record = Survey.new
+    #new_record.id = data_hash['id']
+    new_record.name = data_hash['name']
+    new_record.description = data_hash['description']
+    new_record.attempts_number = data_hash['attempts_number']
+    new_record.active = data_hash['active']
+
+    data_hash['questions'].each do |question|
+      new_question =  new_record.questions.new
+      #new_question.id              = question['id']
+      new_question.survey_id       = question['survey_id']
+      new_question.text            = question['text']
+      new_question.multiple_choice = question['multiple_choice']
+      new_question.weight          = question['weight']
+      question['options'].each do |option|
+        new_option =  new_question.options.new
+        #new_option.id          = option['id']
+        new_option.question_id = option['question_id']
+        new_option.text        = option['text']
+        new_option.correct     = option['correct']
+      end
+    end
+
+    new_record.save
+  end
+
   private
 
   def at_least_one_question

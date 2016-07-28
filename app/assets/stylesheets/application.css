@@ -12,6 +12,7 @@
  *
  *= require font-awesome
  *= require bootstrap-social
+ *= require callout
  *= require highlight/railscasts.min
  *= require_self
  */
@@ -51,11 +52,14 @@ ul.questions, ul.options {
 }
 
 .correct-answer {
-    color: #128023;
+    /*color: #128023;*/
+    background-color: rgba(61, 234, 51, 0.2) !important;
+    /*opacity: 0.2;*/
 }
 
 .wrong-answer {
-    color: #d9534f
+    /*color: #d9534f;*/
+    background-color: rgba(148, 19, 17, 0.2) !important;
 }
 
 .score{
@@ -86,16 +90,39 @@ ol.options li:nth-child(odd), ul.options li:nth-child(odd) {
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
-/*.convert-code li label{*/
+.convert-code-options-options li label{
+    display: block;
+}
+
+.convert-code-options-options li label input[type=checkbox], .convert-code-options-options li label pre{
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.convert-code-options-options li label pre{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.parent{
+    display:table;
+}
+.child{
+    display:table-cell;
+    vertical-align:middle;
+    padding-left:20px;
+}
+/*TODO: check selectors*/
+/*.convert-code-options li label{*/
     /*display: block;*/
 /*}*/
 
-/*.convert-code li label input[type=checkbox], .convert-code li label pre{*/
+/*.convert-code-options li label pre{*/
     /*display:inline-block;*/
     /*vertical-align:middle;*/
 /*}*/
 
-/*.convert-code li label pre{*/
+/*.convert-code-options li label pre{*/
     /*margin-top: 10px;*/
     /*margin-left: 10px;*/
 /*}*/

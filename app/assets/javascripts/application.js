@@ -17,7 +17,3 @@
 
 //= require turbolinks
 //= require bootstrap-confirm-dialog
-
-
-
-

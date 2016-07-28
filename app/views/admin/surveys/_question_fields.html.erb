@@ -23,7 +23,7 @@
         <%= f.fields_for :options do |builder| %>
             <%= render 'option_fields', f: builder %>
         <% end -%>
-        <%= link_to_add_fields '', f, :options, class: 'glyphicon glyphicon-plus btn btn-info add_fields_link pull-right ' %>
+        <%= link_to_add_fields '', f, :options, class: 'textareautosize glyphicon glyphicon-plus btn btn-info add_fields_link pull-right ' %>
       </ol>
     </fieldset>
 

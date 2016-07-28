@@ -2,33 +2,36 @@
     $(document).ready(function () {
         //fix grow onload
         turn_textareas_autogrow();
-        convert();
+
+        $(".convert-code-title ").each(function () {
+            convert($(this));
+        });
+
+        $(".convert-code-options ").each(function () {
+            convert($(this));
+        });
+
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
 
     });
 
-  function convert() {
-    $(".convert-code-options").children().each(function() {
-      $(this).html($(this).html().replace(/\[\s*\w*\s*code="xml hljs"\]/g,"<pre><code class='xml hljs'>"));
-      $(this).html($(this).html().replace(/\[\s*\w*\s*code="cs hljs"\]/g,"<pre><code class='cs hljs'>"));
-      $(this).html($(this).html().replace(/\[\s*\w*\s*code="css hljs"\]/g,"<pre><code class='css hljs'>"));
-      $(this).html($(this).html().replace(/\[\s*\w*\s*code="javascript"\]/g,"<pre><code class='javascript'>"));
-      $(this).html($(this).html().replace(/\[\/code\]/g,"</code></pre>"));
-    });
+    function convert(element) {
 
-    $(".convert-code-title").each(function() {
-      $(this).html($(this).html().replace(/\[\s*\w*\s*code="xml hljs"\]/g,"<pre><code class='xml hljs'>"));
-      $(this).html($(this).html().replace(/\[\s*\w*\s*code="css hljs"\]/g,"<pre><code class='css hljs'>"));
-      $(this).html($(this).html().replace(/\[\s*\w*\s*code="javascript"\]/g,"<pre><code class='javascript'>"));
-      $(this).html($(this).html().replace(/\[\/code\]/g,"</code></pre>"));
-    });
+        var original_content = element.html().toString();
+
+        var new_content = original_content.replace(/\[\s*\w*\s*code="xml hljs"\]/g, "<pre><code class='xml hljs'>")
+                .replace(/\[\s*\w*\s*code="cs hljs"\]/g, "<pre><code class='cs hljs'>")
+                .replace(/\[\s*\w*\s*code="css hljs"\]/g, "<pre><code class='css hljs'>")
+                .replace(/\[\s*\w*\s*code="javascript"\]/g, "<pre><code class='javascript'>")
+                .replace(/\[\/code\]/g, "</code></pre>");
+
+        element.html(new_content);
+    }
 
 
-    $('pre code').each(function (i, block) {
-      hljs.highlightBlock(block);
-    });
-  }
-
-    function turn_textareas_autogrow(){
+    function turn_textareas_autogrow() {
 
         $('textarea.autogrow').each(function () {//fix grow onload
             autogrower($(this));
@@ -39,32 +42,10 @@
         });
     }
 
-    function autogrower(element){
+    function autogrower(element) {
         $(element).css("height", 'auto');
         $(element).css("height", element[0].scrollHeight + 3 + 'px');
     }
-
-//  function convert2() {
-//      var sourceRegex = /\[source:[a-zA-z]+\]/
-//      var langRegex = /:[a-zA-z]+\]/
-//      //[code='cs']var num = 10;[/code]
-//      $("ul.convert-code").children().each(function() {
-//          oldText = $(this).text()
-//
-//          //[source:php] (match)-> :php] (replace)-> php
-//          lang = oldText.match(langRegex)[0].replace(/[^a-zA-Z ]/g, "");
-//
-//          //[source:php] (replace)-> <code class: php>
-//          step_1 = $(this).text(oldText.replace(/\[source:[a-zA-z]+\]/, "<pre><code class='hljs " + lang + "'>"));
-//
-//          //[source] (replace)-> </code>
-//          $(this).text(step_1.text().replace(/\[source\]/, "</code></pre>"));
-//      });
-//
-//      $('pre code').each(function (i, block) {
-//          hljs.highlightBlock(block);
-//      });
-//  }
 
 
 </script>
