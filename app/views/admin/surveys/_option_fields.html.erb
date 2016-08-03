@@ -4,7 +4,7 @@
     <%= f.text_area :text, placeholder: 'answer', rows: '3', class: 'form-control escaped autogrow' %>
   </div>
 
-  <div class="checkbox col-xs-2 col-sm-2">
+  <div class="checkbox col-xs-2 col-sm-2 correct_options">
     <%= f.label :correct do %>
         <%= check_box_for f, :correct %>
     <% end %>
