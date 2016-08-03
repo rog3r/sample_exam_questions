@@ -67,13 +67,14 @@
 
             $('.add').click(function () {
                 $('.bs-callout-primary.fields:visible').each(function () {
-                    correct_options = $(this).find('.correct_options input[type="checkbox"]:checked').length;
+                    correct_options = $(this).find('.correct_options input[type="checkbox"]:checked').length;//get number of options correct
                     if (correct_options == 0) {
                         $(".add").attr({
                             'data-confirm': "Questions must have at least one option correct.",
                             'data-ok': "Ok",
                             'data-cancel': 'Cancelar'
                         });
+                        $(this).attr("tabindex",-1).focus(); //focus on div with question without option correct
                     }
                 });
             });
