@@ -11,9 +11,7 @@
  ----
  https://appcertification.herokuapp.com/
  
- [![Code Climate](https://codeclimate.com/github/rog3r/sample_exam_questions/badges/gpa.svg)](https://codeclimate.com/github/rog3r/sample_exam_questions)
- 
- [![Coverage Status](https://coveralls.io/repos/github/rog3r/sample_exam_questions/badge.svg?branch=master)](https://coveralls.io/github/rog3r/sample_exam_questions?branch=master)
+ [![Code Climate](https://codeclimate.com/github/rog3r/sample_exam_questions/badges/gpa.svg)](https://codeclimate.com/github/rog3r/sample_exam_questions) [![Coverage Status](https://coveralls.io/repos/github/rog3r/sample_exam_questions/badge.svg?branch=master)](https://coveralls.io/github/rog3r/sample_exam_questions?branch=master)
 
  Screenshots
  ----
