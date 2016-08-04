@@ -46,5 +46,6 @@ en:
           attributes:
             base:
               must_have_at_least_one_option: "Must have at least one option"
+              must_have_at_least_one_option_correct: "(text): \"%{text}\" Must have at least one option correct"
       template:
         body: 'Please check the following fields:'

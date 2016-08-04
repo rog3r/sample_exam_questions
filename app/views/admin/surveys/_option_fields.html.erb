@@ -4,13 +4,14 @@
     <%= f.text_area :text, placeholder: 'answer', rows: '3', class: 'form-control escaped autogrow' %>
   </div>
 
-  <div class="checkbox col-xs-2 col-sm-2">
+  <div class="checkbox col-xs-2 col-sm-2 correct_options">
     <%= f.label :correct do %>
-        <%= f.check_box :correct %> Correct answer?
+        <%= check_box_for f, :correct %>
     <% end %>
   </div>
 
   <div class="col-xs-1">
+    <%= f.hidden_field :_destroy %>
     <%= link_to '', '#', class: 'glyphicon glyphicon-remove btn  btn-danger remove_fields' %>
   </div>
 

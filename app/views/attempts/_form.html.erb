@@ -9,15 +9,22 @@
       <% answer_idx = 0 %>
       <% @survey.questions.each do |question| %>
           <li>
-            <h4 class="question"><%= question.text.html_safe %></h4>
+            <h4 class="question convert-code-title"><%= question.text.html_safe %></h4>
             <ol class="options lower-alpha convert-code-options">
               <% question.options.each do |option| %>
                   <% @attempt.answers.build %>
                   <% answer_idx += 1 %>
                   <li>
-                    <%= label_tag :text do %>
-                        <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %><%= option.text.html_safe %>
-                    <% end %>
+                    <div class="parent">
+                      <div class="child">
+                        <%= check_box_tag "attempt[answers_attributes][#{answer_idx}][option_id]", option.id, f.object.answers.include?(option) %>
+                      </div>
+                      <div class="child">
+                        <%= label_tag :text do %>
+                            <%= option.text.html_safe %>
+                        <% end %>
+                      </div>
+                    </div>
                   </li>
               <% end %>
             </ol>

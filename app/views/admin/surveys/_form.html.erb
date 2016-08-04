@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class='row'>
+      <div class='row question'>
         <%= f.fields_for :questions do |builder| %>
             <%= render 'question_fields', f: builder %>
         <% end %>
@@ -45,28 +45,42 @@
                     function (index) {
                         var input = $(this);
 
-                    var escaped_content = input.val()
-                            .replace(/"/g, '&quot;')
-                            .replace('”', '&quot;')
-                            .replace(/'/g, '&#39;')
-                            .replace(/</g, '&lt;')
-                            .replace(/>/g, '&gt;');
+                        var escaped_content = input.val()
+                                .replace(/"/g, '&quot;')
+                                .replace('”', '&quot;')
+                                .replace(/'/g, '&#39;')
+                                .replace(/</g, '&lt;')
+                                .replace(/>/g, '&gt;');
 
-                    input.val(escaped_content);
+                        input.val(escaped_content);
 
-                }
-        );
-    });
+                    }
+            );
+        });
 
 
         $(document).ready(function () {
             turn_textareas_autogrow();
-            setTimeout(function(){//page going to top
+            setTimeout(function () {//page going to top
                 $('.add_fields:last').focus();
             }, 200);
+
+            $('.add').click(function () {
+                $('.bs-callout-primary.fields:visible').each(function () {
+                    correct_options = $(this).find('.correct_options input[type="checkbox"]:checked').length;//get number of options correct
+                    if (correct_options == 0) {
+                        $(".add").attr({
+                            'data-confirm': "Questions must have at least one option correct.",
+                            'data-ok': "Ok",
+                            'data-cancel': 'Cancelar'
+                        });
+                        $(this).attr("tabindex",-1).focus(); //focus on div with question without option correct
+                    }
+                });
+            });
         });
 
-        function turn_textareas_autogrow(){
+        function turn_textareas_autogrow() {
 
             $('textarea.autogrow').each(function () {//fix grow onload
                 autogrower($(this));
@@ -77,7 +91,7 @@
             });
         }
 
-        function autogrower(element){
+        function autogrower(element) {
             $(element).css("height", 'auto');
             $(element).css("height", element[0].scrollHeight + 3 + 'px');
         }
