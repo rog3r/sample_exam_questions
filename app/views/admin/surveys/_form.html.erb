@@ -28,8 +28,9 @@
         <%= f.fields_for :questions do |builder| %>
             <%= render 'question_fields', f: builder %>
         <% end %>
-      </div>
+
       <%= link_to_add_fields '', f, :questions, class: 'glyphicon glyphicon-plus btn btn-primary add_fields_link pull-right add' %>
+      </div>
     </div>
 
     <div class="actions pull-right align-actions">
@@ -74,7 +75,11 @@
                             'data-ok': "Ok",
                             'data-cancel': 'Cancelar'
                         });
+                        $(this).addClass("bs-callout bs-callout-danger");
                         $(this).attr("tabindex",-1).focus(); //focus on div with question without option correct
+                    }
+                    else{
+                        $(this).addClass("bs-callout bs-callout-primary");
                     }
                 });
             });
