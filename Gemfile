@@ -24,6 +24,7 @@ group :development, :test do
   gem 'byebug'
   gem 'annotate', github: 'ctran/annotate_models'
   gem 'better_errors' , platforms: [:x64_mingw, :mingw, :mswin]
+  gem 'coveralls', require: false
 end
 
 group :staging, :production do

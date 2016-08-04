@@ -39,7 +39,7 @@ class Survey < ActiveRecord::Base
   require 'json'
   def self.import_from_json#(file)
 
-    file = File.read("#{Rails.root}/doc/survey_1.json")
+    file = File.read("#{Rails.root}/doc/survey_2.json")
     data_hash = JSON.parse(file)
 
 
