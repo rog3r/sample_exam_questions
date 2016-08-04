@@ -10,6 +10,8 @@
  Live Demo
  ----
  https://appcertification.herokuapp.com/
+ 
+ [![Code Climate](https://codeclimate.com/github/rog3r/sample_exam_questions/badges/gpa.svg)](https://codeclimate.com/github/rog3r/sample_exam_questions)
 
  Screenshots
  ----
