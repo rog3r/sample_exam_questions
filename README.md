@@ -12,8 +12,7 @@
  https://appcertification.herokuapp.com/
  
  [![Code Climate](https://codeclimate.com/github/rog3r/sample_exam_questions/badges/gpa.svg)](https://codeclimate.com/github/rog3r/sample_exam_questions) 
- <!--[![Coverage Status](https://coveralls.io/repos/github/rog3r/sample_exam_questions/badge.svg?branch=master)](https://coveralls.io/github/rog3r/sample_exam_questions?branch=master)-->
-
+ 
  Screenshots
  ----
  [images]
@@ -56,10 +55,17 @@
 
  Todos
  ----
+ - ~~Add explanation to question~~
+ - ~~Login with facebook~~
  - Write Tests
- - Add explanation to question
- - Login with facebook
  - Time limit for attempt
+ - Add timer to attempt
+ - Add exam results
+ - Add exam perfomance results
+ - Add paginate in attempt
+ - Add swipe in attempt (mobile)
+ - Add score report
+ - Add bar graph with highest score vs current score
 
 
 
