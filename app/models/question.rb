@@ -8,7 +8,7 @@ class Question < ActiveRecord::Base
 
   # validations
   validate :at_least_one_option_correct
-  validate :at_least_one_option
+  validate :at_least_two_options
 
 
   validates :text, presence: true, allow_blank: false
@@ -29,8 +29,8 @@ class Question < ActiveRecord::Base
 
   private
 
-  def at_least_one_option
-    errors.add(:base, :must_have_at_least_one_option) if options.size < 1
+  def at_least_two_options
+    errors.add(:base, :must_have_at_least_two_options, {text: self.text}) if options.size < 2
   end
 
   def at_least_one_option_correct

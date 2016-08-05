@@ -19,7 +19,6 @@ class Survey < ActiveRecord::Base
     name
   end
 
-
   def correct_options # returns all the correct options for current surveys
     return self.questions.map(&:correct_options).flatten
   end
@@ -72,7 +71,7 @@ class Survey < ActiveRecord::Base
   private
 
   def at_least_one_question
-    errors.add(:base, :must_have_at_least_one_question) if questions.size < 1
+    errors.add(:base, :must_have_at_least_one_question, {text: self.text}) if questions.size < 1
   end
 
   # def available_for_participant?(participant)

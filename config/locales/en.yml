@@ -41,11 +41,11 @@ en:
         survey:
           attributes:
             base:
-              must_have_at_least_one_question: "Must have at least one question"
+              must_have_at_least_one_question: "(text): \"%{text}\" Must have at least one question"
         question:
           attributes:
             base:
-              must_have_at_least_one_option: "Must have at least one option"
+              must_have_at_least_two_options: "(text): \"%{text}\" Must have at least two options"
               must_have_at_least_one_option_correct: "(text): \"%{text}\" Must have at least one option correct"
       template:
         body: 'Please check the following fields:'
