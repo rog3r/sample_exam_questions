@@ -55,9 +55,9 @@
 
  Todos
  ----
-   - ~~Add explanation to question~~
-   - ~~Login with facebook~~
-   - Write Tests
+ - ~~Add explanation to question~~
+ - ~~Login with facebook~~
+ - Write Tests
    - Time limit for attempt
    - Add timer to attempt
    - Add exam results
