@@ -8,6 +8,11 @@
       <%= f.email_field :email, autofocus: true, class: 'form-control' %>
     </div>
 
+    <div class="field form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <!--<div><%#= t('.currently_waiting_confirmation_for', default: 'Currently waiting confirmation for') %>: <%#= resource.unconfirmed_email %></div>-->
         <div><%= t('.currently_waiting_confirmation_for') %>: <%= resource.unconfirmed_email %></div>

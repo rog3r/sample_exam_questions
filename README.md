@@ -55,17 +55,17 @@
 
  Todos
  ----
- - ~~Add explanation to question~~
- - ~~Login with facebook~~
- - Write Tests
- - Time limit for attempt
- - Add timer to attempt
- - Add exam results
- - Add exam perfomance results
- - Add paginate in attempt
- - Add swipe in attempt (mobile)
- - Add score report
- - Add bar graph with highest score vs current score
+   - ~~Add explanation to question~~
+   - ~~Login with facebook~~
+   - Write Tests
+   - Time limit for attempt
+   - Add timer to attempt
+   - Add exam results
+   - Add exam perfomance results
+   - Add paginate in attempt
+   - Add swipe in attempt (mobile)
+   - Add score report
+   - Add bar graph with highest score vs current score
 
 
 

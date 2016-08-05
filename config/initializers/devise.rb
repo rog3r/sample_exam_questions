@@ -14,7 +14,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
-  config.omniauth :facebook, '1570490613254002', '9a7d37067accfca64dfb9f75cdf2b7aa', scope: 'email', client_options: {ssl: {ca_file: Rails.root.join('lib/assets/cacert.pem').to_s}}
+  config.omniauth :facebook, '1570490613254002', '9a7d37067accfca64dfb9f75cdf2b7aa', scope: 'email', info_fields: 'email, name', client_options: {ssl: {ca_file: Rails.root.join('lib/assets/cacert.pem').to_s}}
 
   # #config/initializers/omniauth.rb
   # Rails.application.config.middleware.use OmniAuth::Builder do

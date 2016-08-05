@@ -15,7 +15,7 @@
     <div class="nav navbar-nav navbar-right" style="margin-right: 70px; margin-top: 10px; ">
       <% if user_signed_in? %>
           <span class="glyphicon glyphicon-user navbar-link" aria-hidden="true"></span>
-          <span class="navbar-link"><%= t('welcome') %></span> <%= link_to "#{current_user.email}", style: 'font-weight: bold;' %>
+          <span class="navbar-link"><%= t('welcome') %> <%= current_user.try(:name) %></span>
           <%= link_to('', destroy_user_session_path, method: :delete, data: {confirm: t('confirm_logout'), ok: t('ok'), cancel: t('cancel')},title: 'Logout', class: 'glyphicon glyphicon-log-out btn btn-sm btn-default') %>
       <% end %>
     </div>
@@ -25,10 +25,10 @@
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
       <li class="<%#= is_active?(surveys_path) %>">
-        <%= link_to surveys_path do %>
-            All surveys
-            <span class='badge'> <%#= surveys_count %> </span>
-        <% end -%>
+        <%#= link_to surveys_path do %>
+            <!--All surveys-->
+            <!--<span class='badge'> <%#= surveys_count %> </span>-->
+        <%# end -%>
       </li>
     </ul>
   </div>
