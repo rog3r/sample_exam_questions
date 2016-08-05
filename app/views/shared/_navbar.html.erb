@@ -15,7 +15,7 @@
     <div class="nav navbar-nav navbar-right" style="margin-right: 70px; margin-top: 10px; ">
       <% if user_signed_in? %>
           <span class="glyphicon glyphicon-user navbar-link" aria-hidden="true"></span>
-          <span class="navbar-link"><%= t('welcome') %> <%= current_user.try(:name) %></span>
+          <span class="navbar-link"><%= t('welcome') %> <%= current_user.name.blank? ? current_user.email : current_user.name %></span>
           <%= link_to('', destroy_user_session_path, method: :delete, data: {confirm: t('confirm_logout'), ok: t('ok'), cancel: t('cancel')},title: 'Logout', class: 'glyphicon glyphicon-log-out btn btn-sm btn-default') %>
       <% end %>
     </div>
